@@ -1,0 +1,20 @@
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+header{
+    height: 30vh;
+    width: 100vw;
+    background-image: url('./../images/bg-desktop-light.jpg');
+    min-height: 20vh;
+    background-repeat: no-repeat;
+    background-size:cover;
+    color: white;
+}
+
+.todo_item_done {
+    text-decoration: line-through;
+}
