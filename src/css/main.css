@@ -1,20 +1,312 @@
-.attribution { 
-    font-size: 11px; text-align: center; 
+@font-face {
+	font-family: "Josefin Sans";
+	src: url("./../fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf");
 }
-.attribution a { 
-    color: hsl(228, 45%, 44%); 
+:root {
+	/* forms border radius value */
+	--f-b-r: 5px;
+	--forms-width: 70%;
+	--forms-margin-bottom: 1rem;
+
+	--primary-bright-blue: hsl(220, 98%, 61%);
+
+	--very-light-gray: hsl(0, 0%, 98%);
+	--very-light-grayish-blue: hsl(236, 33%, 92%);
+	--light-grayish-blue: hsl(233, 11%, 84%);
+	--dark-grayish-blue: hsl(236, 9%, 61%);
+	--very-dark-grayish-blue: hsl(235, 19%, 35%);
+}
+* {
+	box-sizing: border-box;
+}
+html {
+	font-family: "Josefin Sans", sans-serif;
+	/* font-size: 18px; */
+	color: var(--very-dark-grayish-blue);
 }
 
-header{
-    height: 30vh;
-    width: 100vw;
-    background-image: url('./../images/bg-desktop-light.jpg');
-    min-height: 20vh;
-    background-repeat: no-repeat;
-    background-size:cover;
-    color: white;
+body {
+	background-color: var(--very-light-gray);
 }
 
-.todo_item_done {
-    text-decoration: line-through;
+/* 
+HEADER 
+*/
+header {
+	width: 100vw;
+	min-height: 30vh;
+
+	background-image: url("./../images/bg-mobile-light.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	color: white;
+
+	position: absolute;
 }
+header > div,
+main {
+	width: 92vw;
+	margin: 0 auto;
+}
+header > div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	height: 100%;
+	margin-top: 3.5rem;
+}
+header h1 {
+	/* margin-top: 4rem; */
+	display: inline;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+main {
+	position: relative;
+	top: 8rem;
+}
+
+/*  
+FORMS BORDER RADIUS 
+*/
+.add-item-form,
+.tasks-filter {
+	border-radius: var(--f-b-r);
+}
+.mark-form-item {
+	border-radius: var(--f-b-r) var(--f-b-r) 0 0;
+}
+
+/* 
+FORMS LAYOUT
+ */
+.add-item-form,
+.mark-form-item,
+.tasks-filter,
+.tasks-state {
+	margin: 0 auto;
+	background-color: white;
+}
+.add-item-form,
+.mark-todo-tab,
+.tasks-state {
+	margin-bottom: var(--forms-margin-bottom);
+}
+
+/* 
+STATE COMPONENT
+ */
+.tasks-state {
+	display: flex;
+	justify-content: space-between;
+	border-radius: 0 0 var(--f-b-r) var(--f-b-r);
+	padding: 1rem;
+	font-weight: bold;
+}
+.tasks-state > * {
+	color: var(--dark-grayish-blue);
+	font-weight: 700;
+}
+.tasks-state > p {
+	margin: 0rem;
+}
+.tasks-filter {
+	display: flex;
+	justify-content: center;
+	padding: 1rem;
+}
+.instructions {
+	text-align: center;
+	margin-top: 2rem;
+	color: var(--dark-grayish-blue);
+	font-weight: bolder;
+}
+
+/* 
+INPUTS
+ */
+.add-item-form > input {
+	caret-color: var(--primary-bright-blue);
+}
+.add-item-form > input {
+	width: 100%;
+	border: none;
+}
+.add-item-form > input:focus {
+	outline: none;
+}
+.add-item-form,
+.single-task {
+	padding: 1rem;
+}
+.single-task label {
+	display: flex;
+	align-content: center;
+	align-items: center;
+}
+.single-task > div {
+	display: flex;
+}
+.tasks-filter {
+	padding: 1rem 4rem;
+	display: flex;
+	justify-content: space-evenly;
+}
+.tasks-filter label {
+	font-weight: bold;
+	font-size: 1.2rem;
+	position: relative;
+}
+.tasks-filter input {
+	position: absolute;
+}
+.tasks-filter label.checked {
+	color: var(--primary-bright-blue);
+}
+input[type="radio"] {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	right: 0;
+	top: 0;
+	opacity: 0.5;
+	background-color: blue;
+}
+.single-task {
+	border-bottom: 1px solid lightgray;
+	display: flex;
+	justify-content: space-between;
+	font-size: 0.85rem;
+}
+
+.single-task label {
+	font-size: 0.9em;
+}
+.add-item-form {
+	display: flex;
+}
+.add-item-form > div {
+	/* position: absolute; */
+	/* content: url("./../images/icon-check.svg"); */
+	content: "";
+	margin-right: 0.5rem;
+	padding: 10px;
+	border: 1px solid grey;
+	width: 1rem;
+	height: 1rem;
+	border-radius: 100%;
+}
+
+input[type="checkbox"] {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	padding: 10px;
+	background-color: white;
+	border: 1px solid grey;
+	width: 1rem;
+	height: 1rem;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+	position: relative;
+}
+input[type="checkbox"]:checked {
+	background: linear-gradient(
+		to right bottom,
+		hsl(192, 100%, 67%),
+		hsl(280, 87%, 65%)
+	);
+}
+input[type="checkbox"]:checked + label {
+	text-decoration: line-through;
+	color: var(--light-grayish-blue);
+}
+input[type="checkbox"]:checked:before {
+	position: absolute;
+	content: url("./../images/icon-check.svg");
+	top: 4px;
+	right: -5px;
+	width: 100%;
+	height: 100%;
+}
+/* .single-task-done {
+	text-decoration: line-through;
+	color: var(--light-grayish-blue);
+} */
+/* cursors */
+.single-task-done label {
+	cursor: default;
+}
+input[type="checkbox"]:hover {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	border-color: white;
+	background-image: linear-gradient(
+		to bottom right,
+		hsl(192, 100%, 67%),
+		hsl(280, 87%, 65%)
+	);
+}
+input[type="checkbox"]:hover:after {
+	display: block;
+	content: "";
+
+	background-color: white;
+	border: 0px solid red;
+	border-radius: 100%;
+	color: white;
+	padding: 9px;
+}
+button:hover,
+input[type="radio"],
+input[type="checkbox"]:hover,
+.single-task label {
+	cursor: pointer;
+}
+/* 
+BUTTONS 
+*/
+button {
+	background: transparent;
+	box-shadow: 0px 0px 0px transparent;
+	border: 0px solid transparent;
+	text-shadow: 0px 0px 0px transparent;
+}
+
+button:hover {
+	background: transparent;
+	box-shadow: 0px 0px 0px transparent;
+	border: 0px solid transparent;
+	text-shadow: 0px 0px 0px transparent;
+}
+
+button:active {
+	outline: none;
+	border: none;
+}
+
+button:focus {
+	outline: 0;
+}
+.single-task button svg {
+	transform: scale(80%);
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
+footer {
+	margin-top: 20rem;
+}
+
+/* .toggle-dark-theme {} */
