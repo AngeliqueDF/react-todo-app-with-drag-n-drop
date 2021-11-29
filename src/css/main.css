@@ -320,11 +320,19 @@ footer {
 	}
 	main {
 		top: 10rem;
+		box-shadow: 0px 15px 50px -11px rgba(0, 0, 0, 0.15);
 	}
 	.add-item-form {
 		margin-bottom: 1.5rem;
 	}
 	.tasks-state {
 		font-size: 0.75rem;
+		margin-bottom: 0;
+		border-bottom: 2px solid var(--very-light-gray);
+		border-radius: 0;
+	}
+	.instructions {
+		margin: unset;
+		margin-bottom: 2rem;
 	}
 }
