@@ -15,12 +15,14 @@
 	--dark-grayish-blue: hsl(236, 9%, 61%);
 	--very-dark-grayish-blue: hsl(235, 19%, 35%);
 }
-* {
+*,
+*::before,
+*::after {
 	box-sizing: border-box;
 }
 html {
 	font-family: "Josefin Sans", sans-serif;
-	/* font-size: 18px; */
+	font-size: 18px;
 	color: var(--very-dark-grayish-blue);
 }
 
@@ -57,12 +59,12 @@ header > div {
 	margin-top: 3.5rem;
 }
 header h1 {
-	/* margin-top: 4rem; */
 	display: inline;
 	margin: 0;
 	text-transform: uppercase;
+	letter-spacing: 19px;
 }
-
+/* TODO make main a grid container */
 main {
 	position: relative;
 	top: 8rem;
@@ -77,6 +79,7 @@ FORMS BORDER RADIUS
 }
 .mark-form-item {
 	border-radius: var(--f-b-r) var(--f-b-r) 0 0;
+	box-shadow: 0px 40px 175px rgb(136 136 136 / 30%), -5px 0px 20px rgb(136 136 136 / 2%);
 }
 
 /* 
@@ -104,6 +107,8 @@ STATE COMPONENT
 	border-radius: 0 0 var(--f-b-r) var(--f-b-r);
 	padding: 1rem;
 	font-weight: bold;
+	font-size: 0.8rem;
+	box-shadow: 0px 20px 30px rgb(136 136 136 / 30%);
 }
 .tasks-state > * {
 	color: var(--dark-grayish-blue);
@@ -116,6 +121,7 @@ STATE COMPONENT
 	display: flex;
 	justify-content: center;
 	padding: 1rem;
+	font-weight: bold;
 }
 .instructions {
 	text-align: center;
@@ -127,6 +133,9 @@ STATE COMPONENT
 /* 
 INPUTS
  */
+.add-item-form::placeholder {
+	font-size: 1rem;
+}
 .add-item-form > input {
 	caret-color: var(--primary-bright-blue);
 }
@@ -161,8 +170,9 @@ INPUTS
 	justify-content: space-evenly;
 }
 .tasks-filter label {
-	font-size: 1.2rem;
+	font-size: 1rem;
 	position: relative;
+	color: var(--dark-grayish-blue);
 }
 .tasks-filter input {
 	position: absolute;
@@ -177,14 +187,14 @@ input[type="radio"] {
 	left: 0;
 	right: 0;
 	top: 0;
-	opacity: 0.5;
+	opacity: 0.1;
 	background-color: blue;
 }
 .single-task {
 	border-bottom: 2px solid var(--very-light-gray);
 	display: flex;
 	justify-content: space-between;
-	font-size: 0.85rem;
+	font-size: 1.1rem;
 }
 
 .single-task label {
@@ -225,7 +235,7 @@ input[type="checkbox"]:hover,
 .single-task label {
 	cursor: pointer;
 }
-input[type="checkbox"]:hover {
+input[type="checkbox"]:active {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -237,16 +247,15 @@ input[type="checkbox"]:hover {
 		hsl(280, 87%, 65%)
 	);
 }
-input[type="checkbox"]:hover:after {
+input[type="checkbox"]:active:after {
 	display: block;
 	content: "";
 	background-color: white;
-	/* border: 1px solid red; */
 	border-radius: 100%;
 	color: white;
 	padding: 9px;
 }
-input[type="checkbox"]:hover,
+input[type="checkbox"]:active,
 input[type="checkbox"]:checked {
 	background: linear-gradient(
 		to right bottom,
@@ -261,7 +270,7 @@ input[type="checkbox"]:checked + label {
 input[type="checkbox"]:checked:before {
 	position: absolute;
 	content: url("./../images/icon-check.svg");
-	top: 4px;
+	top: 2px;
 	right: -5px;
 	width: 100%;
 	height: 100%;
@@ -271,16 +280,12 @@ BUTTONS
 */
 button {
 	background: transparent;
-	box-shadow: 0px 0px 0px transparent;
 	border: 0px solid transparent;
-	text-shadow: 0px 0px 0px transparent;
 }
 
 button:hover {
 	background: transparent;
-	box-shadow: 0px 0px 0px transparent;
 	border: 0px solid transparent;
-	text-shadow: 0px 0px 0px transparent;
 }
 
 button:active {
@@ -298,29 +303,36 @@ button:focus {
 .attribution {
 	font-size: 11px;
 	text-align: center;
+	margin-top: 1rem;
 }
 .attribution a {
 	color: hsl(228, 45%, 44%);
 }
 footer {
-	margin-top: 20rem;
+	margin-top: 10rem;
 }
 @media screen and (min-width: 1440px) {
 	header {
 		background-image: url("./../images/bg-desktop-light.jpg");
-		min-height: 40vh;
+		min-height: 60vh;
+		background-position: 45% 20%;
+	}
+	header h1 {
+		font-size: 2.3rem;
+		letter-spacing: 26px;
 	}
 	header > div,
 	main {
-		width: 33%;
+		width: 38%;
 		margin: 0 auto;
 	}
 	header > div {
-		margin-top: 5rem;
+    margin-top: 4rem;
 	}
 	main {
 		top: 10rem;
-		box-shadow: 0px 15px 50px -11px rgba(0, 0, 0, 0.15);
+		border-radius: var(--f-b-r);
+		position: relative;
 	}
 	.add-item-form {
 		margin-bottom: 1.5rem;
@@ -331,8 +343,25 @@ footer {
 		border-bottom: 2px solid var(--very-light-gray);
 		border-radius: 0;
 	}
+	.tasks-filter {
+		border-radius: 0 0 var(--f-b-r) var(--f-b-r);
+		position: absolute;
+		width: 30%;
+		bottom: 0%;
+		left: 1px;
+		right: 30%;
+		left: 30%;
+	}
+	.tasks-filter label	{
+		margin-right: 1rem;
+	}
+	footer {
+		margin-top: 12rem;
+	}
 	.instructions {
 		margin: unset;
-		margin-bottom: 2rem;
+	}
+	.attribution {
+		margin-top: 1rem;
 	}
 }
