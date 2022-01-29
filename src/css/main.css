@@ -39,15 +39,11 @@ header {
 
 	background-image: url("./../images/bg-mobile-light.jpg");
 	background-repeat: no-repeat;
-	background-size: cover;
-
+	background-position: left top;
 	color: white;
-
-	position: absolute;
 }
-header > div,
 main {
-	width: 92vw;
+	width: 96%;
 	margin: 0 auto;
 }
 header > div {
@@ -56,15 +52,30 @@ header > div {
 	align-items: center;
 
 	height: 100%;
-	margin-top: 3.5rem;
+	position: relative;
+	top: 2.5rem;
+	width: 87%;
+	margin: 0 auto;
 }
 header h1 {
 	display: inline;
 	margin: 0;
+
 	text-transform: uppercase;
-	letter-spacing: 19px;
+	font-size: 1.4rem;
+	font-weight: 700;
+	letter-spacing: 12px;
 }
-/* TODO make main a grid container */
+.toggle-dark-theme{
+	height: 1.2rem;
+	width: 1.2rem;
+	padding: 0;
+
+	background-size: contain;
+	background-image: url('./../images/icon-moon.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+}
 main {
 	position: relative;
 	top: 8rem;
