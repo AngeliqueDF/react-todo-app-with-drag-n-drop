@@ -14,6 +14,7 @@
 	--light-grayish-blue: hsl(233, 11%, 84%);
 	--dark-grayish-blue: hsl(236, 9%, 61%);
 	--very-dark-grayish-blue: hsl(235, 19%, 35%);
+	--app-width: 87%;
 }
 *,
 *::before,
@@ -42,10 +43,8 @@ header {
 	background-position: left top;
 	color: white;
 }
-main {
-	width: 96%;
-	margin: 0 auto;
-}
+
+/* title and theme toggler container */
 header > div {
 	display: flex;
 	justify-content: space-between;
@@ -54,7 +53,7 @@ header > div {
 	height: 100%;
 	position: relative;
 	top: 2.5rem;
-	width: 87%;
+	width: var(--app-width);
 	margin: 0 auto;
 }
 header h1 {
@@ -64,7 +63,7 @@ header h1 {
 	text-transform: uppercase;
 	font-size: 1.4rem;
 	font-weight: 700;
-	letter-spacing: 12px;
+	letter-spacing: 11px;
 }
 .toggle-dark-theme{
 	height: 1.2rem;
@@ -77,6 +76,8 @@ header h1 {
 	background-position: center;
 }
 main {
+	width: var(--app-width);
+	margin: 0 auto;
 	position: relative;
 	top: 8rem;
 }
