@@ -176,14 +176,6 @@ li.single-task {
 	margin-right: auto;
 }
 
-/* MOVE TO DESKTOP VIEW */
-/* .single-task button {
-	visibility: hidden;
-}
-.single-task:hover > button {
-	visibility: visible;
-} */
-
 .single-task > div {
 	display: flex;
 }
@@ -393,7 +385,6 @@ button {
 }
 
 button:hover {
-	background: transparent;
 	border: 0px solid transparent;
 }
 
@@ -458,6 +449,13 @@ button:focus {
 
 	.add-item-form {
 		margin-bottom: 1.5rem;
+	}
+
+	.single-task button {
+		visibility: hidden;
+	}
+	.single-task:hover > button {
+		visibility: visible;
 	}
 
 	.mark-items {margin-bottom: 0;}
