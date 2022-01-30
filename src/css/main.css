@@ -40,11 +40,13 @@ HEADER
 */
 header {
 	width: 100%;
-	min-height: 30vh;
+	min-height: 60vh;
 
 	background-image: url("./../images/bg-mobile-light.jpg");
 	background-repeat: no-repeat;
-	background-position: left top;
+	background-position: top;
+	background-size: 100%;
+
 	color: white;
 }
 
@@ -83,8 +85,11 @@ header h1 {
 main {
 	width: var(--app-width);
 	margin: 0 auto;
-	position: relative;
-	top: -7.45rem;
+	position: absolute;
+	top: 6rem;
+	bottom: 0;
+	left: 0;
+	right: 0;
 }
 
 /*  
@@ -119,7 +124,7 @@ FORMS LAYOUT
 	background-color: white;
 }
 .add-item-form,
-.mark-items,
+/* .mark-items, */
 .tasks-state {
 	margin-bottom: var(--forms-margin-bottom);
 }
@@ -205,36 +210,52 @@ input[type="checkbox"]:hover,
 /* 
 STATE COMPONENT
  */
+.tasks-count,
+.clear-tasks,
+.tasks-filter button {
+	color: var(--dark-grayish-blue);
+}
+.tasks-filter button {
+	font-weight: 700;
+}
+button.filter-applied {
+	color: var(--primary-bright-blue);
+}
  .tasks-state {
-	display: flex;
+	/* display: flex;
 	justify-content: space-between;
 	border-radius: 0 0 var(--f-b-r) var(--f-b-r);
 	padding: 1rem;
 	font-weight: bold;
 	font-size: var(--forms-font-size);
 	color: var(--very-light-grayish-blue);
-	box-shadow: 0px 20px 30px rgb(136 136 136 / 30%);
+	box-shadow: 0px 20px 30px rgb(136 136 136 / 30%); */
+	display: grid;
+	background-color: unset;
+
+	grid-template-rows: 3rem 1.5rem 3rem;
+	grid-template-columns: 1fr 2fr 1fr;
 }
-.tasks-state > * {
+/* .tasks-state > * {
 	color: var(--dark-grayish-blue);
 	font-weight: 700;
 }
 .tasks-state > p {
 	margin: 0rem;
-}
-.tasks-filter {
+} */
+/* .tasks-filter {
 	display: flex;
 	justify-content: center;
 	padding: 1rem;
 	font-weight: bold;
-}
+} */
 .instructions {
 	text-align: center;
-	margin-top: 2rem;
+	margin-top: 100vh;
 	color: var(--dark-grayish-blue);
 	font-weight: bolder;
 }
-.tasks-filter {
+/* .tasks-filter {
 	padding: 1rem 4rem;
 	display: flex;
 	justify-content: space-evenly;
@@ -249,7 +270,45 @@ STATE COMPONENT
 }
 .tasks-filter label.checked {
 	color: var(--primary-bright-blue);
+} */
+
+.tasks-info {
+	grid-column-start: 1;
+	grid-column-end: 4;
+	width: 100%;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	background-color: white;
+
+	font-size: 0.7rem;
 }
+.tasks-count,
+.clear-tasks {
+	padding: 1rem;
+	margin: 0;
+}
+.tasks-count {
+	margin: 0;
+}
+.tasks-filter {
+	grid-row-start: 3;
+	grid-column-start: 1;
+	grid-column-end: 4;
+
+	width: 100%;
+
+	display: flex;
+	justify-content: center;
+}
+
+.tasks-filter button {
+	margin: 0 0.25rem;
+	padding: 0.25rem;
+}
+
 input[type="radio"] {
 	position: absolute;
 	width: 100%;
@@ -317,8 +376,11 @@ input[type="checkbox"]:checked + label {
 input[type="checkbox"]:checked:before {
 	position: absolute;
 	content: url("./../images/icon-check.svg");
-	top: 5px;
-	right: -5px;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	left: 4px;
+	/* right: -5px; */
 	width: 100%;
 	height: 100%;
 }
@@ -351,9 +413,9 @@ button:focus {
 .attribution a {
 	color: hsl(228, 45%, 44%);
 }
-footer {
+/* footer {
 	margin-top: 10rem;
-}
+} */
 @media screen and (min-width: 1440px) {
 
 	header {
@@ -384,9 +446,9 @@ footer {
 	}
 
 	main {
-		top: -18rem;
+		position: absolute;
+    top: 8.5rem;
 		border-radius: var(--f-b-r);
-		position: relative;
 	}
 
 	form,
@@ -401,27 +463,51 @@ footer {
 	.mark-items {margin-bottom: 0;}
 
 	.tasks-state {
-		font-size: 0.75rem;
+		width: 100%;
+		display: flex;
+		background-color: white;
+	}
+
+	.tasks-state {
+		padding: 0.5rem 0;
 		margin-bottom: 0;
 		border-bottom: 2px solid var(--very-light-gray);
 		border-radius: 0;
+
+		display: grid;
+
+		grid-template-columns: 1fr 2fr 1fr;
+		grid-template-rows: 2rem;
 	}
 
+	.tasks-info {
+		font-size: 0.8rem;
+		grid-row-start: 1;
+	}
+	
 	.tasks-filter {
-		border-radius: 0 0 var(--f-b-r) var(--f-b-r);
-		width: 30%;
-		font-size: var(--forms-font-size);
+		font-size: 1rem;
 		position: relative;
-		top: -3rem;
+		width: 30%;
+
+		border-radius: 0 0 var(--f-b-r) var(--f-b-r);
+		font-size: var(--forms-font-size);
+
+		grid-row-start: 1;
+		grid-column-start: 2;
+		grid-column-end: 3;
+	}
+	.tasks-filter button {
+		font-size: 1rem;
 	}
 	.tasks-filter label	{
 		margin-right: 1rem;
 	}
-	footer {
+	/* footer {
 		margin-top: 12rem;
-	}
+	} */
 	.instructions {
-		margin: unset;
+		margin-top: 20vh;
 	}
 	.attribution {
 		margin-top: 1rem;
