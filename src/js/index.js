@@ -7,3 +7,5 @@
 // TODO remove checked on .clear-tasks click
 
 // TODO implement tasks filtering
+
+// TODO implement theme switching

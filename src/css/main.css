@@ -6,10 +6,12 @@
 	--app-width: 87%;
 
 	--forms-width: 70%;
-	--forms-border-radius: 5px;	
+	--forms-br: 5px;
 	--form-inputs-padding: 0.8rem 1.1rem;
 	--forms-margin-bottom: 1rem;
 	--forms-font-size: 0.65rem;
+
+	--checkboxes-width: 1rem;
 
 	--primary-bright-blue: hsl(220, 98%, 61%);
 	
@@ -29,14 +31,61 @@
 	--very-dark-grayish-blue: hsl(233, 14%, 35%);
 	--very-dark-grayish-blue: hsl(237, 14%, 26%);
 }
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
+
+/* 
+RESETS 
+*/
+
+/* Resetting buttons styles */
+
+button {
+	background: transparent;
+	border: 0px solid transparent;
 }
+button:hover {
+	border: 0px solid transparent;
+}
+button:active {
+	outline: none;
+	border: none;
+}
+button:focus {
+	outline: 0;
+}
+.attribution {
+	font-size: 11px;
+	text-align: center;
+	margin-top: 1rem;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
+
+/* Resetting input checkboxes */
+
+input[type="checkbox"]{
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-color: transparent;
+}
+
+/*
+COLORS
+*/
+
+.add-item-form input {
+	background-color: transparent;
+}
+.add-item-form,
+.add-item-form input::placeholder,
+.delete-items,
+.tasks-filter,
+.tasks-info {
+	background-color: var(--very-light-gray);
+}
+
 html {
-	font-family: "Josefin Sans", sans-serif;
-	font-size: 18px;
 	color: var(--very-dark-grayish-blue);
 }
 
@@ -44,54 +93,90 @@ body {
 	background-color: var(--very-light-gray);
 }
 
-/* 
-HEADER 
-*/
 header {
-	width: 100%;
-	min-height: 60vh;
-
-	background-image: url("./../images/bg-mobile-light.jpg");
-	background-repeat: no-repeat;
-	background-position: top;
-	background-size: 100%;
-
 	color: white;
 }
 
+.task-checkbox:active {
+	border-color: var(--very-light-gray);	
+	background-image: linear-gradient(
+		to bottom right,
+		hsl(192, 100%, 67%),
+		hsl(280, 87%, 65%)
+	);
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+.task-checkbox:active:after {
+	content: "";
+	background-color: var(--very-light-gray);
+}
+
+.task-checkbox:checked {
+	background: linear-gradient(
+		to right bottom,
+		hsl(192, 100%, 67%),
+		hsl(280, 87%, 65%)
+	);
+}
+
+.tasks-count,
+.clear-tasks,
+.tasks-filter button {
+	color: var(--dark-grayish-blue);
+}
+
+.add-item-form > input:focus {
+	outline: none;
+}
+
+button.filter-applied {
+	color: var(--primary-bright-blue);
+}
+
+.instructions {
+	color: var(--dark-grayish-blue);
+}
+
 /* 
-TITLE AND THEME TOGGLE BUTTON
- */
+LAYOUT 
+*/
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+header {
+	width: 100%;
+	min-height: 60vh;
+}
+
+/* title and theme toggle button */
 header > div {
+	height: 100%;
+	width: var(--app-width);
+	margin: 0 auto;
+	
+	position: relative;
+	top: 2.5rem;
+	
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-
-	height: 100%;
-	position: relative;
-	top: 2.5rem;
-	width: var(--app-width);
-	margin: 0 auto;
 }
 
 header h1 {
 	display: inline;
 	margin: 0;
-
-	text-transform: uppercase;
-	font-size: 1.4rem;
-	font-weight: 700;
-	letter-spacing: 11px;
 }
+
 .toggle-dark-theme{
 	height: 1.2rem;
 	width: 1.2rem;
 	padding: 0;
-
-	background-size: contain;
-	background-image: url('./../images/icon-moon.svg');
-	background-repeat: no-repeat;
-	background-position: center;
 }
 
 main {
@@ -104,59 +189,43 @@ main {
 	right: 0;
 }
 
-/*  
-FORMS BORDER RADIUS 
-*/
-.add-item-form,
-.tasks-filter {
-	border-radius: var(--forms-border-radius);
-}
-.mark-items,
-.tasks-filter {
-	border-radius: var(--forms-border-radius) var(--forms-border-radius) 0 0;
-	box-shadow: 0px 40px 175px rgb(136 136 136 / 30%), -5px 0px 20px rgb(136 136 136 / 2%);
+.task-checkbox,
+.new-task-checkbox {
+	content: "";
+	margin-right: 1.1rem;
+	padding: 10px;
+	border: 1px solid var(--light-grayish-blue);
+	width: var(--checkboxes-width);
+	height: var(--checkboxes-width);
+	border-radius: 100%;
 }
 
-/* 
-FORMS LAYOUT
- */
- form{
-	 font-size: var(--forms-font-size);
- }
+/* tasks layout */
 
- .add-item-form {
-	 display: flex;
-	 padding: var(--form-inputs-padding);
- }
+.add-item-form {
+	display: flex;
+	padding: var(--form-inputs-padding);
+	border-radius: var(--forms-br);
+}
 
- .add-item-form,
- .add-item-form input,
- .add-item-form input::placeholder,
- .mark-items,
- .tasks-state,
- .tasks-filter {
-	 background-color: var(--very-light-gray);
- }
-
-.add-item-form,
-/* .mark-items, */
-.tasks-state {
+.add-item-form{
 	margin-bottom: var(--forms-margin-bottom);
-}
-.add-item-form::placeholder {
-	font-size: 1rem;
 }
 
 .add-item-form > input {
 	padding: 0;
-	caret-color: var(--primary-bright-blue);
-}
-.add-item-form > input {
 	width: 100%;
 	border: none;
 }
-.add-item-form > input:focus {
-	outline: none;
+
+.delete-items {
+	border-radius: var(--forms-br) var(--forms-br) 0 0;
+	margin-bottom: 0;
+}
+
+.delete-items,
+.tasks-filter {
+	box-shadow: 0px 40px 175px rgb(136 136 136 / 30%), -5px 0px 20px rgb(136 136 136 / 2%);
 }
 
 ul {
@@ -164,17 +233,47 @@ ul {
 	margin: 0;
 }
 
-li.single-task {
-	font-size: var(--forms-font-size);
+.single-task {
+	padding: var(--form-inputs-padding);
+
+	display: flex;
+	justify-content: space-between;
+	
+	align-items: center;
+	border-bottom: 1px solid var(--light-grayish-blue);
 }
 
-.single-task {
-	padding: 0.8rem;
-	padding: var(--form-inputs-padding);
+.task-checkbox {
+	width: var(--checkboxes-width);
+	border-radius: 50%;
+}
+
+.task-checkbox:active {
+	display: flex;
+	justify-content: center;
 	align-items: center;
 }
 
+.task-checkbox:active:after {
+	display: block;
+	border-radius: 100%;
+	padding: 9px;
+	width: 100%;
+}
+
+.task-checkbox:checked {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.task-checkbox:checked:before {
+	margin-top: 2px;
+}
+
 .single-task label {
+	width: 100%;
+
 	display: flex;
 	align-content: center;
 	align-items: center;
@@ -185,65 +284,25 @@ li.single-task {
 	display: flex;
 }
 
-.single-task {
-	border-bottom: 2px solid var(--very-light-gray);
-	display: flex;
-	justify-content: space-between;
-}
-
-/* cursors */
-.single-task-done label {
-	cursor: default;
-}
-button:hover,
-input[type="radio"],
-input[type="checkbox"]:hover,
-.single-task label {
-	cursor: pointer;
-}
 .single-task button svg {
 	transform: scale(80%);
 }
 
-.mark-complete {
+.delete-task {
 	height: 0.65rem;
 	width: 0.65rem;
-
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-image: url('./../images/icon-cross.svg');
-	background-position: center;
 }
 
-/* 
-STATE COMPONENT
- */
-.tasks-count,
-.clear-tasks,
-.tasks-filter button {
-	color: var(--dark-grayish-blue);
-}
-.tasks-filter button {
-	font-weight: 700;
-}
-button.filter-applied {
-	color: var(--primary-bright-blue);
-}
- .tasks-state {
+/* state layout */
+
+.tasks-state {
 	display: grid;
-	background-color: unset;
-
 	grid-template-rows: 3rem 1.5rem 3rem;
 	grid-template-columns: 1fr 2fr 1fr;
 }
-.instructions {
-	text-align: center;
-	margin-top: 100vh;
-	color: var(--dark-grayish-blue);
-	font-weight: bolder;
-}
 
 .tasks-info {
+	border-radius: 0 0 var(--forms-br) var(--forms-br);
 	grid-column-start: 1;
 	grid-column-end: 4;
 	width: 100%;
@@ -251,20 +310,20 @@ button.filter-applied {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-
-	background-color: var(--very-light-gray);
-
-	font-size: 0.7rem;
 }
+
 .tasks-count,
 .clear-tasks {
 	padding: 1rem;
 	margin: 0;
 }
+
 .tasks-count {
 	margin: 0;
 }
+
 .tasks-filter {
+	border-radius: var(--forms-br);
 	grid-row-start: 3;
 	grid-column-start: 1;
 	grid-column-end: 4;
@@ -280,100 +339,115 @@ button.filter-applied {
 	padding: 0.25rem;
 }
 
-.add-item-form > div {
-	content: "";
-	margin-right: 1.1rem;
-	padding: 10px;
-	border: 1px solid var(--light-grayish-blue);
-	width: 1rem;
-	height: 1rem;
-	border-radius: 100%;
+.instructions {
+	text-align: center;
+	margin-top: 10rem;
 }
-input[type="checkbox"] {
-	appearance: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	padding: 10px;
-	background-color: transparent;
-	border: 1px solid var(--light-grayish-blue);
-	width: 1rem;
-	height: 1rem;
-	border-radius: 100%;
-	margin-right: 1.1rem;
-	position: relative;
+
+/*
+TYPOGRAPHY
+*/
+
+html {
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 18px;
 }
-input[type="checkbox"]:active {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 1.1rem;
-	border-color: transparent;
-	background-image: linear-gradient(
-		to bottom right,
-		hsl(192, 100%, 67%),
-		hsl(280, 87%, 65%)
-	);
+
+header h1 {
+	text-transform: uppercase;
+	font-size: 1.4rem;
+	font-weight: 700;
+	letter-spacing: 11px;
 }
-input[type="checkbox"]:active:after {
-	display: block;
-	content: "";
-	border-radius: 100%;
-	color: white;
-	padding: 9px;
+
+form{
+	font-size: var(--forms-font-size);
 }
-input[type="checkbox"]:active,
-input[type="checkbox"]:checked {
-	background: linear-gradient(
-		to right bottom,
-		hsl(192, 100%, 67%),
-		hsl(280, 87%, 65%)
-	);
+
+.add-item-form::placeholder {
+	font-size: 1rem;
 }
-input[type="checkbox"]:checked + label {
+
+.add-item-form > input {
+	caret-color: var(--primary-bright-blue);
+}
+
+.task-checkbox:checked + label {
 	text-decoration: line-through;
 	color: var(--light-grayish-blue);
 }
-input[type="checkbox"]:checked:before {
-	position: absolute;
-	content: url("./../images/icon-check.svg");
-	top: 0px;
-	bottom: 0px;
-	right: 0px;
-	left: 4px;
-	width: 100%;
-	height: 100%;
+
+.single-task {
+	font-size: var(--forms-font-size);
 }
-/* 
-BUTTONS 
+
+.tasks-filter button {
+	font-weight: 700;
+}
+
+.tasks-info {
+	font-size: 0.7rem;
+}
+
+.task-checkbox:checked + label {
+	text-decoration: line-through;
+}
+
+/*
+ASSETS
 */
 
-/* Resetting buttons styles */
-button {
-	background: transparent;
-	border: 0px solid transparent;
+header {
+	background-image: url("./../images/bg-mobile-light.jpg");
+	background-repeat: no-repeat;
+	background-position: top;
+	background-size: 100%;
 }
 
-button:hover {
-	border: 0px solid transparent;
+.toggle-dark-theme{
+	background-size: contain;
+	background-image: url('./../images/icon-moon.svg');
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
-button:active {
-	outline: none;
-	border: none;
+.task-checkbox:checked:before {
+	margin-top: 2px;
+	content: url("./../images/icon-check.svg");
 }
 
-button:focus {
-	outline: 0;
+.delete-task {
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url('./../images/icon-cross.svg');
+	background-position: center;
 }
-.attribution {
-	font-size: 11px;
-	text-align: center;
-	margin-top: 1rem;
+
+/*
+CURSORS
+*/
+
+.single-task-done label {
+	cursor: default;
 }
-.attribution a {
-	color: hsl(228, 45%, 44%);
+
+button:hover,
+input[type="radio"],
+.task-checkbox:hover,
+.single-task label {
+	cursor: pointer;
 }
+
 @media screen and (min-width: 1440px) {
+
+	/*
+		COLORS 
+	*/
+
+	.tasks-filter {
+		background-color: transparent;
+		box-shadow: none;
+	}
 
 	header {
 		background-image: url("./../images/bg-desktop-light.jpg");
@@ -392,11 +466,6 @@ button:focus {
     top: 4.2rem;
 	}
 
-	.toggle-dark-theme {
-		background-size: auto;
-		width: 1000px;
-	}
-
 	main,
 	header > div {
 		width: 37%;
@@ -405,7 +474,7 @@ button:focus {
 	main {
 		position: absolute;
     top: 8.5rem;
-		border-radius: var(--forms-border-radius);
+		border-radius: var(--forms-br);
 	}
 
 	form,
@@ -424,8 +493,6 @@ button:focus {
 		visibility: visible;
 	}
 
-	.mark-items {margin-bottom: 0;}
-
 	.tasks-state {
 		width: 100%;
 		display: flex;
@@ -436,7 +503,6 @@ button:focus {
 		background-color: var(--very-light-gray);
 		padding: 0.5rem 0;
 		margin-bottom: 0;
-		border-bottom: 2px solid var(--very-light-gray);
 		border-radius: 0;
 
 		display: grid;
@@ -480,59 +546,95 @@ button:focus {
 @media (prefers-color-scheme: dark) {
 	:root {
 		/* Dark theme */
-		--very-dark-blue: hsl(235, 21%, 11%);
-		--very-dark-desaturated-blue: hsl(235, 24%, 19%);
 		--light-grayish-blue: hsl(234, 39%, 85%);
 		--light-grayish-blue-hover: hsl(236, 33%, 92%);
+
 		--dark-grayish-blue: hsl(234, 11%, 52%);
-		--very-dark-grayish-blue: hsl(233, 14%, 35%);
+
 		--very-dark-grayish-blue: hsl(237, 14%, 26%);
+		--very-dark-blue: hsl(235, 21%, 11%);
+		--very-dark-desaturated-blue: hsl(235, 24%, 19%);
 	}
+
+	/*
+		COLORS 
+	*/
+
+	html {
+		color: var(--light-grayish-blue);
+	}
+
 	body {
 		background-color: var(--very-dark-blue);
 	}
 
-	header {
-		background-image: url('./../images/bg-mobile-dark.jpg');
+	.delete-items,
+	.tasks-filter {
+		box-shadow: 0px 100px 175px rgb(10 10 10 / 50%), -5px 0px 20px rgb(10 10 10 / 50%);
+	}
+
+	.add-item-form input {
+		color: var(--light-grayish-blue);
+		background-color: transparent;
+	}
+	
+	.add-item-form input::placeholder {
+		color: var(--dark-grayish-blue);
+	}
+
+	
+	.task-checkbox,
+	.new-task-checkbox {
+		border: 1px solid var(--very-dark-grayish-blue)
+	}
+
+	.task-checkbox:active:after {
+		content: "";
+		background-color: var(--very-dark-grayish-blue);
+	}
+
+
+	.tasks-state {
+		color:var(--very-dark-grayish-blue)
 	}
 
 	.add-item-form,
-	.add-item-form input,
 	.add-item-form input::placeholder,
-	.mark-items,
-	.tasks-info,
-	.tasks-filter {
+	.delete-items,
+	.tasks-filter,
+	.tasks-info {
 		background-color: var(--very-dark-desaturated-blue);
-		color: var(--light-grayish-blue);
-	}
-
-	.add-item-form > div,
-	input[type="checkbox"] {
-		border: 1px solid var(--very-dark-grayish-blue);
-	}
-
-	input[type="checkbox"]:checked + label {
-		color: var(--very-dark-grayish-blue);
-	}
-
-	.mark-items {
-		border-radius: var(--forms-border-radius) var(--forms-border-radius) 0 0;
-		box-shadow: 0px 40px 175px rgb(10 10 10 / 50%), -5px 0px 20px rgb(10 10 10 / 50%);
-	}
-
-	li.single-task {
-		border-bottom: 1px solid var(--very-dark-grayish-blue);
-	}
-
-	.tasks-state {
-		border: none;
 	}
 
 	.tasks-filter button:active,
 	.clear-tasks:active {
 		color: var(--light-grayish-blue);
 	}
-	
+
+	.single-task {
+		border-bottom: 1px solid var(--very-dark-grayish-blue);
+	}
+
+	.instructions {
+		color: var(--dark-grayish-blue);
+	}
+
+	.task-checkbox:checked + label {
+		color: var(--dark-grayish-blue);
+	}
+
+	/*
+	ASSETS
+	*/
+
+	header {
+		background-image: url('./../images/bg-mobile-dark.jpg');
+	}
+
+	button.toggle-dark-theme {
+		background-image: url('./../images/icon-sun.svg');
+	}
+
 	@media screen and (min-width: 1440px) {
 		header {
 			background-image: url('./../images/bg-desktop-dark.jpg');
@@ -542,13 +644,16 @@ button:focus {
 			background-image: url('./../images/icon-sun.svg');
 		}
 
+		.tasks-state{
+			background-color: var(--very-dark-desaturated-blue);
+		}
+
 		.tasks-info,
 		.tasks-filter {
 			background-color: transparent
 		}
-		
-		.tasks-state {
-			background-color: var(--very-dark-desaturated-blue);
+		.tasks-filter {
+			box-shadow: none;
 		}
 	}
 }

@@ -26,86 +26,87 @@
 
   <main>
     <form action="" class="add-item-form">
-      <div></div>
+      <div class="new-task-checkbox"></div>
       <input type="text" placeholder="Create a new todo...">
     </form>
 
-    <form action="" class="mark-items">
+    <form id="delete-items" action="" class="delete-items">
       <ul>
 
         <li class="single-task">
           <!-- drag and drop events are attached to inputs -->
-          <input type="checkbox" name="" value="">
+          <input type="checkbox" class="task-checkbox" name="" value="">
 
           <!-- clicking on label checks the adjacent input -->
           <label for="">
             Complete online JavaScript course
           </label>
 
-          <button type="button" class="mark-complete"></button>
+          <button type="button" class="delete-task"></button>
         </li>
 
         <li class="single-task">
           <!-- drag and drop events are attached to inputs -->
-          <input type="checkbox" name="" value="">
+          <input type="checkbox" class="task-checkbox" name="" value="">
 
           <!-- clicking on label checks the adjacent input -->
           <label for="">
             Jog around the park 3x
           </label>
 
-          <button type="button" class="mark-complete"></button>
+          <button type="button" class="delete-task"></button>
         </li>
 
         <li class="single-task">
           <!-- drag and drop events are attached to inputs -->
-          <input type="checkbox" name="" value="">
+          <input type="checkbox" class="task-checkbox" name="" value="">
 
           <!-- clicking on label checks the adjacent input -->
           <label for="">
             10 minutes meditation
           </label>
 
-          <button type="button" class="mark-complete"></button>
+          <button type="button" class="delete-task"></button>
         </li>
 
         <li class="single-task">
           <!-- drag and drop events are attached to inputs -->
-          <input type="checkbox" name="" value="">
+          <input type="checkbox" class="task-checkbox" name="" value="">
 
           <!-- clicking on label checks the adjacent input -->
           <label for="">
             Read for 1 hour
           </label>
 
-          <button type="button" class="mark-complete"></button>
+          <button type="button" class="delete-task"></button>
         </li>
 
         <li class="single-task">
           <!-- drag and drop events are attached to inputs -->
-          <input type="checkbox" name="" value="">
+          <input type="checkbox" class="task-checkbox" name="" value="">
 
           <!-- clicking on label checks the adjacent input -->
           <label for="">
             Pick up groceries
           </label>
 
-          <button type="button" class="mark-complete"></button>
+          <button type="button" class="delete-task"></button>
         </li>
 
         <li class="single-task">
           <!-- drag and drop events are attached to inputs -->
-          <input type="checkbox" name="" value="">
+          <input type="checkbox" class="task-checkbox" name="" value="">
 
           <!-- clicking on label checks the adjacent input -->
           <label for="">
             Complete Todo App on Frontend Mentor
           </label>
 
-          <button type="button" class="mark-complete"></button>
+          <button type="button" class="delete-task"></button>
         </li>
       </ul>
     </form>
+
 
     <div class="tasks-state">
 
@@ -114,10 +115,11 @@
           <!-- Add dynamic number --> 2 items left
         </p>
 
-        <button type="button" class="clear-tasks">
+        <button form="delete-items" type="submit" class="clear-tasks">
           Clear Completed
         </button>
       </div>
+
 
       <div class="tasks-filter">
         <button type="button" class="filter-applied">All</button>
@@ -126,6 +128,8 @@
       </div>
 
     </div>
+
+
 
   </main>
 
@@ -139,6 +143,7 @@
       Coded by <a href="https://adf.dev">Angélique D. Faye</a>.
     </div>
   </footer>
+  <script src="./src/js/index.js"></script>
 </body>
 
 </html>
