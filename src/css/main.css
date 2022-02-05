@@ -127,6 +127,10 @@ header {
 	color: var(--dark-grayish-blue);
 }
 
+.tasks-filter button:active {
+color: var(--very-dark-grayish-blue)
+}
+
 .add-item-form > input:focus {
 	outline: none;
 }
