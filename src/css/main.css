@@ -288,6 +288,14 @@ background color as #delete-items
 	margin-top: 2px;
 }
 
+/* removes the check icon when unchecking 
+a task, otherwise both the background circle
+and the checkbox appear next to each other
+because their parent is a flex element */
+.task-checkbox:checked:active:before {
+	display: none;
+}	
+
 .single-task label {
 	width: 100%;
 
