@@ -437,8 +437,10 @@ header {
 }
 
 .task-checkbox:checked:before {
-	margin-top: 2px;
-	content: url("./../images/icon-check.svg");
+	content: "";
+	background: url("./../images/icon-check.svg");
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 .delete-task {
