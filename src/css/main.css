@@ -285,7 +285,11 @@ background color as #delete-items
 }
 
 .task-checkbox:checked:before {
-	margin-top: 2px;
+	/* using padding to make the checkmark
+	 in the background visible,
+	 using the display:block, width, and height
+	 properties didn't work */
+	padding: 5px;
 }
 
 /* removes the check icon when unchecking 
