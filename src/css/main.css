@@ -576,9 +576,12 @@ input[type="radio"],
 		border: 1px solid var(--very-dark-grayish-blue)
 	}
 
+	.task-checkbox:active {
+		border-color: var(--very-dark-desaturated-blue);
+	}
 	.task-checkbox:active:after {
 		content: "";
-		background-color: var(--very-dark-grayish-blue);
+		background-color: var(--very-dark-desaturated-blue);
 	}
 
 
