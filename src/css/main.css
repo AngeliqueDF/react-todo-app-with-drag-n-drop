@@ -265,14 +265,17 @@ ul {
 	than the others when the element is active */
 	width: 22px;
 	height: 22px;
-	
 }
 
+/* displays a circle with the same 
+background color as #delete-items
+ to make the active checkbox look transparent
+*/
 .task-checkbox:active:after {
-	display: block;
 	border-radius: 100%;
-	padding: 9px;
-	width: 100%;
+	/* gives this pseudo element a 
+	height and width of 20px */
+	padding: 10px;
 }
 
 .task-checkbox:checked {
