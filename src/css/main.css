@@ -256,6 +256,16 @@ ul {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	/* hiding the border */
+	border: none;
+
+	/* then increasing the size of the
+	checkbox to avoid it looking smaller 
+	than the others when the element is active */
+	width: 22px;
+	height: 22px;
+	
 }
 
 .task-checkbox:active:after {
