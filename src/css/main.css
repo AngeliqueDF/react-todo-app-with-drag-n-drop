@@ -99,11 +99,11 @@ input[type="checkbox"]{
 COLORS
 */
 
-.add-item-form input {
+.new-task input {
 	background-color: transparent;
 }
-.add-item-form,
-.add-item-form input::placeholder,
+.new-task,
+.new-task input::placeholder,
 .delete-items,
 .tasks-filter,
 .tasks-info {
@@ -156,7 +156,7 @@ header {
 color: var(--very-dark-grayish-blue)
 }
 
-.add-item-form > input:focus {
+.new-task > input:focus {
 	outline: none;
 }
 
@@ -219,7 +219,7 @@ main {
 }
 
 .task-checkbox,
-.new-task-checkbox {
+.checkbox {
 	content: "";
 	margin-right: 1.1rem;
 	padding: 10px;
@@ -231,17 +231,17 @@ main {
 
 /* tasks layout */
 
-.add-item-form {
+.new-task {
 	display: flex;
 	padding: var(--form-inputs-padding);
 	border-radius: var(--forms-br);
 }
 
-.add-item-form{
+.new-task{
 	margin-bottom: var(--forms-margin-bottom);
 }
 
-.add-item-form > input {
+.new-task > input {
 	padding: 0;
 	width: 100%;
 	border: none;
@@ -418,11 +418,11 @@ form{
 	font-size: var(--forms-font-size);
 }
 
-.add-item-form::placeholder {
+.new-task::placeholder {
 	font-size: 1rem;
 }
 
-.add-item-form > input {
+.new-task > input {
 	caret-color: var(--primary-bright-blue);
 }
 
@@ -547,7 +547,7 @@ input[type="radio"],
 		border-radius: var(--forms-br);
 	}
 
-	.add-item-form {
+	.new-task {
 		margin-bottom: 1.5rem;
 	}
 
