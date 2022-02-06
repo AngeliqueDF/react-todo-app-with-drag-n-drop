@@ -12,24 +12,49 @@
 	--forms-font-size: 0.65rem;
 
 	--checkboxes-width: 1rem;
-
-	--primary-bright-blue: hsl(220, 98%, 61%);
 	
 	/* Light theme */	
 	--very-light-gray: hsl(0, 0%, 98%);
-	--very-light-grayish-blue: hsl(236, 33%, 92%);
+	/* --very-light-grayish-blue: hsl(236, 33%, 92%); */
 	--light-grayish-blue: hsl(233, 11%, 84%);
-	--dark-grayish-blue: hsl(236, 9%, 61%);
-	--very-dark-grayish-blue: hsl(235, 19%, 35%);
+	/* --dark-grayish-blue: hsl(236, 9%, 61%); */
+	/* --very-dark-grayish-blue: hsl(235, 19%, 35%); */
 
 	/* Dark theme */
-	--very-dark-blue: hsl(235, 21%, 11%);
-	--very-dark-desaturated-blue: hsl(235, 24%, 19%);
-	--light-grayish-blue: hsl(234, 39%, 85%);
-	--light-grayish-blue-hover: hsl(236, 33%, 92%);
+	/* --very-dark-blue: hsl(235, 21%, 11%); */
+	/* --very-dark-desaturated-blue: hsl(235, 24%, 19%); */
+	/* --light-grayish-blue: hsl(234, 39%, 85%); */
+	/* --light-grayish-blue-hover: hsl(236, 33%, 92%); not used ? */
+	/* --very-dark-grayish-blue: hsl(233, 14%, 35%); */
+	/* --dark-grayish-blue: hsl(234, 11%, 52%); */
+	
+	--primary-bright-blue: hsl(220, 98%, 61%);
+	/* used in light theme */
+	/* --light-grayish-blue */
+	--primary-color: hsl(233, 11%, 84%);
+	/* --very-light-gray */
+	--secondary-color: hsl(0, 0%, 98%);
 	--dark-grayish-blue: hsl(234, 11%, 52%);
-	--very-dark-grayish-blue: hsl(233, 14%, 35%);
 	--very-dark-grayish-blue: hsl(237, 14%, 26%);
+	
+	/* used in dark theme */
+	/* checkboxes */
+	--very-dark-grayish-blue: hsl(237, 14%, 26%);
+	/* body background */
+	--very-dark-blue: hsl(235, 21%, 11%); 
+	/* forms and filter background */
+	--very-dark-desaturated-blue: hsl(235, 24%, 19%); 
+	
+}
+
+:root.dark {
+	/* used in dark theme */
+	/* checkboxes */
+	--very-dark-grayish-blue: hsl(237, 14%, 26%);
+	/* body background */
+	--very-dark-blue: hsl(235, 21%, 11%); 
+	/* forms and filter background */
+	--very-dark-desaturated-blue: hsl(235, 24%, 19%); 
 }
 
 /* 
@@ -471,27 +496,41 @@ input[type="radio"],
 
 @media screen and (min-width: 1440px) {
 
+	/* 
+		LAYOUT
+	*/
+
 	/*
 		COLORS 
 	*/
 
-	.tasks-filter {
+	.tasks-state {
+		background-color: var(--very-light-gray);
+	}
+
+	.tasks-info {
 		background-color: transparent;
+	}
+
+	.tasks-filter button:active {
+		color: var(--very-dark-grayish-blue);
+	}
+
+	.tasks-filter {
 		box-shadow: none;
 	}
 
+	/* 
+		LAYOUT
+	*/
+
 	header {
-		background-image: url("./../images/bg-desktop-light.jpg");
 		background-size: 100%;
 		min-height: 60vh;
 		width: 100%;
 		margin: 0 auto;
 	}
 
-	header h1 {
-		font-size: 2.3rem;
-		letter-spacing: 14px;
-	}
 
 	header > div {
     top: 4.2rem;
@@ -508,11 +547,6 @@ input[type="radio"],
 		border-radius: var(--forms-br);
 	}
 
-	form,
-	li.single-task {
-		font-size: 1rem;
-	}
-
 	.add-item-form {
 		margin-bottom: 1.5rem;
 	}
@@ -520,6 +554,7 @@ input[type="radio"],
 	.single-task button {
 		visibility: hidden;
 	}
+	
 	.single-task:hover > button {
 		visibility: visible;
 	}
@@ -527,11 +562,10 @@ input[type="radio"],
 	.tasks-state {
 		width: 100%;
 		display: flex;
-		background-color: transparent; /* keep this value, change child elements' background individually */
+		/* background-color: transparent; keep this value, change child elements' background individually */
 	}
 
-	.tasks-state {
-		background-color: var(--very-light-gray);
+	.tasks-state {	
 		padding: 0.5rem 0;
 		margin-bottom: 0;
 		border-radius: 0;
@@ -543,8 +577,6 @@ input[type="radio"],
 	}
 
 	.tasks-info {
-		background-color: transparent;
-		font-size: 0.8rem;
 		grid-row-start: 1;
 	}
 	
@@ -554,13 +586,6 @@ input[type="radio"],
 		grid-column-end: 3;
 	}
 
-	.tasks-filter button {
-		font-size: 1rem;
-	}
-
-	.tasks-filter button:active {
-		color: var(--very-dark-grayish-blue);
-	}
 
 	.tasks-filter label	{
 		margin-right: 1rem;
@@ -572,6 +597,42 @@ input[type="radio"],
 	.attribution {
 		margin-top: 1rem;
 	}
+
+	/* 
+		TYPOGRAPHY
+	*/
+
+	header h1 {
+		font-size: 2.3rem;
+		letter-spacing: 14px;
+	}
+	
+	form,
+	li.single-task {
+		font-size: 1rem;
+	}
+
+	.tasks-info {
+		font-size: 0.8rem;
+	}
+
+	.tasks-filter button {
+		font-size: 1rem;
+	}
+
+	/* 
+		ASSETS
+	*/
+
+	.tasks-filter {
+		background-color: transparent;
+	}
+
+	header {
+		background-image: url("./../images/bg-desktop-light.jpg");
+	}
+
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -600,7 +661,6 @@ input[type="radio"],
 	.add-item-form input::placeholder {
 		color: var(--dark-grayish-blue);
 	}
-
 	
 	.task-checkbox,
 	.new-task-checkbox {
@@ -614,7 +674,6 @@ input[type="radio"],
 		content: "";
 		background-color: var(--very-dark-desaturated-blue);
 	}
-
 
 	.tasks-state {
 		color:var(--very-dark-grayish-blue)
@@ -658,13 +717,10 @@ input[type="radio"],
 	}
 
 	@media screen and (min-width: 1440px) {
-		header {
-			background-image: url('./../images/bg-desktop-dark.jpg');
-		}
-		
-		.toggle-dark-theme{
-			background-image: url('./../images/icon-sun.svg');
-		}
+
+		/* 
+			COLORS
+		*/
 
 		.tasks-state{
 			background-color: var(--very-dark-desaturated-blue);
@@ -674,8 +730,21 @@ input[type="radio"],
 		.tasks-filter {
 			background-color: transparent
 		}
+
 		.tasks-filter {
 			box-shadow: none;
+		}
+
+		/*
+			ASSETS
+		*/
+
+		header {
+			background-image: url('./../images/bg-desktop-dark.jpg');
+		}
+		
+		.toggle-dark-theme{
+			background-image: url('./../images/icon-sun.svg');
 		}
 	}
 }
