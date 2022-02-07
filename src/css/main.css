@@ -402,7 +402,7 @@ form{
 }
 
 .new-task > input {
-	caret-color: var(--primary-bright-blue);
+	caret-color: hsl(220, 98%, 61%);
 }
 
 .task-checkbox:checked + label {
