@@ -99,7 +99,7 @@ COLORS
 }
 .new-task,
 .new-task input::placeholder,
-.delete-items,
+.delete-checked-tasks-form,
 .tasks-filter,
 .tasks-info {
 	background-color: var(--forms-background);
@@ -249,12 +249,12 @@ main {
 	border: none;
 }
 
-.delete-items {
+.delete-checked-tasks-form {
 	border-radius: var(--forms-br) var(--forms-br) 0 0;
 	margin-bottom: 0;
 }
 
-.delete-items,
+.delete-checked-tasks-form,
 .tasks-filter {
 	box-shadow: 0px 40px 175px rgb(136 136 136 / 30%), -5px 0px 20px rgb(136 136 136 / 2%);
 }
@@ -295,7 +295,7 @@ ul {
 }
 
 /* displays a circle with the same 
-background color as #delete-items
+background color as #delete-checked-tasks-form
  to make the active checkbox look transparent
 */
 .task-checkbox:active:after {
@@ -657,7 +657,7 @@ input[type="radio"],
 		COLORS 
 	*/
 
-	.delete-items,
+	.delete-checked-tasks-form,
 	.tasks-filter {
 		box-shadow: 0px 10px 30px rgba(20, 10, 20, 0.9), -5px 0px 20px rgb(10 10 10 / 10%);
 	}
