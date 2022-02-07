@@ -20,6 +20,7 @@
 	--checkboxes-color: hsl(233, 11%, 84%);
 	--labels-color: hsl(233, 14%, 35%);
 	--checked-label-color: hsl(233, 11%, 84%);
+	--new-task-color: hsl(237, 14%, 26%);
 	--task-border-color: hsl(233, 11%, 84%);
 	--active-clear-task-color: hsl(233, 11%, 84%);
 	--active-new-task-color: hsl(237, 14%, 26%);
@@ -402,6 +403,7 @@ form{
 }
 
 .new-task > input {
+	color: var(--new-task-color);
 	caret-color: hsl(220, 98%, 61%);
 }
 
@@ -621,6 +623,7 @@ input[type="radio"],
 		--checkboxes-color: hsl(237, 14%, 26%);
 		--checked-label-color: hsl(237, 14%, 26%);
 		--labels-color: hsl(233, 11%, 84%);
+		--new-task-color: hsl(233, 11%, 84%);
 		--task-border-color: hsl(237, 14%, 26%);
 		--active-new-task-color: hsl(237, 14%, 26%);
 		--filter-buttons-base: hsl(234, 11%, 52%);
