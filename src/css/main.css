@@ -28,6 +28,12 @@
 	--filter-buttons-active: hsl(237, 14%, 26%);
 	--filter-buttons-selected: hsl(220, 98%, 61%);
 	--tasks-info-color: hsl(234, 11%, 52%);
+
+	--header-background: url("./../images/bg-mobile-light.jpg");
+
+	--toggle-theme-btn: url('./../images/icon-moon.svg');
+}
+
 body.dark {
 		--forms-background: hsl(235, 24%, 19%);
 		--body-background: hsl(235, 21%, 11%);
@@ -445,7 +451,7 @@ ASSETS
 */
 
 header {
-	background-image: url("./../images/bg-mobile-light.jpg");
+	background-image: var(--header-background);
 	background-repeat: no-repeat;
 	background-position: top;
 	background-size: 100%;
@@ -453,7 +459,7 @@ header {
 
 .toggle-dark-theme{
 	background-size: contain;
-	background-image: url('./../images/icon-moon.svg');
+	background-image: var(--toggle-theme-btn);
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -489,9 +495,9 @@ input[type="radio"],
 
 @media screen and (min-width: 1440px) {
 
-	/* 
-		LAYOUT
-	*/
+	:root {
+		--header-background: url("./../images/bg-desktop-light.jpg");
+	}
 
 	/*
 		COLORS 
@@ -555,7 +561,6 @@ input[type="radio"],
 	.tasks-state {
 		width: 100%;
 		display: flex;
-		/* background-color: transparent; keep this value, change child elements' background individually */
 	}
 
 	.tasks-state {
@@ -622,10 +627,8 @@ input[type="radio"],
 	}
 
 	header {
-		background-image: url("./../images/bg-desktop-light.jpg");
+		background-image: var(--header-background);
 	}
-
-
 }
 
 @media (prefers-color-scheme: dark) {
@@ -640,8 +643,10 @@ input[type="radio"],
 		--active-new-task-color: hsl(237, 14%, 26%);
 		--filter-buttons-base: hsl(234, 11%, 52%);
 		--filter-buttons-active: hsl(237, 14%, 26%);
-		/* --filter-buttons-selected: hsl(220, 98%, 61%); */
 		--tasks-info-color: hsl(234, 11%, 52%);
+
+		--header-background: url('./../images/bg-mobile-dark.jpg');
+		--toggle-theme-btn: url('./../images/icon-sun.svg');
 	}
 	/*
 		COLORS 
@@ -657,14 +662,18 @@ input[type="radio"],
 	*/
 
 	header {
-		background-image: url('./../images/bg-mobile-dark.jpg');
+		background-image: var(--header-background);
 	}
 
-	button.toggle-dark-theme {
-		background-image: url('./../images/icon-sun.svg');
+	.toggle-dark-theme {
+		background-image: var(--toggle-theme-btn);
 	}
 
 	@media screen and (min-width: 1440px) {
+		:root {
+			--header-background: url('./../images/bg-desktop-dark.jpg');
+			--toggle-theme-btn: url('./../images/icon-sun.svg');
+		}
 
 		/* 
 			COLORS
@@ -688,11 +697,11 @@ input[type="radio"],
 		*/
 
 		header {
-			background-image: url('./../images/bg-desktop-dark.jpg');
+			background-image: var(--header-background);
 		}
-		
-		.toggle-dark-theme{
-			background-image: url('./../images/icon-sun.svg');
+	
+		.toggle-dark-theme {
+			background-image: var(--toggle-theme-btn);
 		}
 	}
 }
