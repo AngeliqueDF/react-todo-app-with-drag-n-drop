@@ -79,23 +79,26 @@ COLORS
 .delete-items,
 .tasks-filter,
 .tasks-info {
-	background-color: var(--very-light-gray);
+	background-color: var(--forms-background);
 }
 
 html {
-	color: var(--very-dark-grayish-blue);
+	color: var(--primary-color);
 }
 
 body {
-	background-color: var(--very-light-gray);
+	background-color: var(--body-background);
 }
 
 header {
 	color: white;
 }
 
+.single-task label {
+	color: var(--labels-color);
+}
+
 .task-checkbox:active {
-	border-color: var(--very-light-gray);	
 	background-image: linear-gradient(
 		to bottom right,
 		hsl(192, 100%, 67%),
@@ -107,7 +110,7 @@ header {
 
 .task-checkbox:active:after {
 	content: "";
-	background-color: var(--very-light-gray);
+	background-color: var(--forms-background);
 }
 
 .task-checkbox:checked {
@@ -121,11 +124,15 @@ header {
 .tasks-count,
 .clear-tasks,
 .tasks-filter button {
-	color: var(--dark-grayish-blue);
+	color: var(--filter-buttons-base);
+}
+
+.clear-tasks:active {
+	color: var(--active-clear-task-color);
 }
 
 .tasks-filter button:active {
-color: var(--very-dark-grayish-blue)
+	color: var(--primary-color)
 }
 
 .new-task > input:focus {
@@ -133,11 +140,11 @@ color: var(--very-dark-grayish-blue)
 }
 
 button.filter-applied {
-	color: var(--primary-bright-blue);
+	color: var(--filter-buttons-selected);
 }
 
 .instructions {
-	color: var(--dark-grayish-blue);
+	color: var(--ternary-color);
 }
 
 /* 
@@ -195,7 +202,7 @@ main {
 	content: "";
 	margin-right: 1.1rem;
 	padding: 10px;
-	border: 1px solid var(--light-grayish-blue);
+	border: 1px solid var(--checkboxes-color);
 	width: var(--checkboxes-width);
 	height: var(--checkboxes-width);
 	border-radius: 100%;
@@ -241,7 +248,7 @@ ul {
 	justify-content: space-between;
 	
 	align-items: center;
-	border-bottom: 1px solid var(--light-grayish-blue);
+	border-bottom: 1px solid var(--task-border-color);
 }
 
 .task-checkbox {
@@ -400,7 +407,7 @@ form{
 
 .task-checkbox:checked + label {
 	text-decoration: line-through;
-	color: var(--light-grayish-blue);
+	color: var(--checked-label-color);
 }
 
 .single-task {
@@ -477,7 +484,7 @@ input[type="radio"],
 	*/
 
 	.tasks-state {
-		background-color: var(--very-light-gray);
+		background-color: var(--forms-background);
 	}
 
 	.tasks-info {
@@ -485,7 +492,7 @@ input[type="radio"],
 	}
 
 	.tasks-filter button:active {
-		color: var(--very-dark-grayish-blue);
+		color: var(--primary-color);
 	}
 
 	.tasks-filter {
@@ -537,7 +544,7 @@ input[type="radio"],
 		/* background-color: transparent; keep this value, change child elements' background individually */
 	}
 
-	.tasks-state {	
+	.tasks-state {
 		padding: 0.5rem 0;
 		margin-bottom: 0;
 		border-radius: 0;
@@ -648,7 +655,7 @@ input[type="radio"],
 		*/
 
 		.tasks-state{
-			background-color: var(--very-dark-desaturated-blue);
+			background-color: var(--forms-background);
 		}
 
 		.tasks-info,
