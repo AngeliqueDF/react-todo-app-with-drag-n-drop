@@ -144,7 +144,7 @@ button.filter-applied {
 }
 
 .instructions {
-	color: var(--ternary-color);
+	color: var(--filter-buttons-base);
 }
 
 /* 
