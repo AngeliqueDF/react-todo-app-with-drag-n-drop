@@ -28,6 +28,18 @@
 	--filter-buttons-active: hsl(237, 14%, 26%);
 	--filter-buttons-selected: hsl(220, 98%, 61%);
 	--tasks-info-color: hsl(234, 11%, 52%);
+body.dark {
+		--forms-background: hsl(235, 24%, 19%);
+		--body-background: hsl(235, 21%, 11%);
+		--checkboxes-color: hsl(237, 14%, 26%);
+		--checked-label-color: hsl(237, 14%, 26%);
+		--labels-color: hsl(233, 11%, 84%);
+		--new-task-color: hsl(233, 11%, 84%);
+		--task-border-color: hsl(237, 14%, 26%);
+		--active-new-task-color: hsl(237, 14%, 26%);
+		--filter-buttons-base: hsl(234, 11%, 52%);
+		--filter-buttons-active: hsl(237, 14%, 26%);
+		--tasks-info-color: hsl(234, 11%, 52%);
 }
 
 /* 
