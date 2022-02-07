@@ -22,7 +22,7 @@
 	--checked-label-color: hsl(233, 11%, 84%);
 	--new-task-color: hsl(237, 14%, 26%);
 	--task-border-color: hsl(233, 11%, 84%);
-	--active-clear-task-color: hsl(233, 11%, 84%);
+	--active-clear-task-color: hsl(237, 14%, 26%);
 	--active-new-task-color: hsl(237, 14%, 26%);
 	--filter-buttons-base: hsl(234, 11%, 52%);
 	--filter-buttons-active: hsl(237, 14%, 26%);
@@ -42,10 +42,14 @@ body.dark {
 		--labels-color: hsl(233, 11%, 84%);
 		--new-task-color: hsl(233, 11%, 84%);
 		--task-border-color: hsl(237, 14%, 26%);
+		--active-clear-task-color: hsl(233, 11%, 84%);
 		--active-new-task-color: hsl(237, 14%, 26%);
 		--filter-buttons-base: hsl(234, 11%, 52%);
 		--filter-buttons-active: hsl(237, 14%, 26%);
 		--tasks-info-color: hsl(234, 11%, 52%);
+
+		--header-background: url('./../images/bg-mobile-dark.jpg');
+		--toggle-theme-btn: url('./../images/icon-sun.svg');
 }
 
 /* 
@@ -151,7 +155,7 @@ header {
 }
 
 .tasks-filter button:active {
-	color: var(--primary-color)
+	color: var(--filter-buttons-active)
 }
 
 .new-task > input:focus {
@@ -641,8 +645,9 @@ input[type="radio"],
 		--new-task-color: hsl(233, 11%, 84%);
 		--task-border-color: hsl(237, 14%, 26%);
 		--active-new-task-color: hsl(237, 14%, 26%);
+		--active-clear-task-color: hsl(233, 11%, 84%);
 		--filter-buttons-base: hsl(234, 11%, 52%);
-		--filter-buttons-active: hsl(237, 14%, 26%);
+		--filter-buttons-active: hsl(233, 11%, 84%);
 		--tasks-info-color: hsl(234, 11%, 52%);
 
 		--header-background: url('./../images/bg-mobile-dark.jpg');
