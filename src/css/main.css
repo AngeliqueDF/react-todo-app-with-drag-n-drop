@@ -5,6 +5,9 @@
 :root {
 	--app-width: 87%;
 
+	--body-background: hsl(0, 0%, 98%);
+
+	--forms-background: hsl(0, 0%, 98%);
 	--forms-width: 70%;
 	--forms-br: 5px;
 	--form-inputs-padding: 0.8rem 1.1rem;
@@ -13,48 +16,17 @@
 
 	--checkboxes-width: 1rem;
 	
-	/* Light theme */	
-	--very-light-gray: hsl(0, 0%, 98%);
-	/* --very-light-grayish-blue: hsl(236, 33%, 92%); */
-	--light-grayish-blue: hsl(233, 11%, 84%);
-	/* --dark-grayish-blue: hsl(236, 9%, 61%); */
-	/* --very-dark-grayish-blue: hsl(235, 19%, 35%); */
-
-	/* Dark theme */
-	/* --very-dark-blue: hsl(235, 21%, 11%); */
-	/* --very-dark-desaturated-blue: hsl(235, 24%, 19%); */
-	/* --light-grayish-blue: hsl(234, 39%, 85%); */
-	/* --light-grayish-blue-hover: hsl(236, 33%, 92%); not used ? */
-	/* --very-dark-grayish-blue: hsl(233, 14%, 35%); */
-	/* --dark-grayish-blue: hsl(234, 11%, 52%); */
-	
-	--primary-bright-blue: hsl(220, 98%, 61%);
-	/* used in light theme */
-	/* --light-grayish-blue */
 	--primary-color: hsl(233, 11%, 84%);
-	/* --very-light-gray */
-	--secondary-color: hsl(0, 0%, 98%);
-	--dark-grayish-blue: hsl(234, 11%, 52%);
-	--very-dark-grayish-blue: hsl(237, 14%, 26%);
-	
-	/* used in dark theme */
-	/* checkboxes */
-	--very-dark-grayish-blue: hsl(237, 14%, 26%);
-	/* body background */
-	--very-dark-blue: hsl(235, 21%, 11%); 
-	/* forms and filter background */
-	--very-dark-desaturated-blue: hsl(235, 24%, 19%); 
-	
-}
-
-:root.dark {
-	/* used in dark theme */
-	/* checkboxes */
-	--very-dark-grayish-blue: hsl(237, 14%, 26%);
-	/* body background */
-	--very-dark-blue: hsl(235, 21%, 11%); 
-	/* forms and filter background */
-	--very-dark-desaturated-blue: hsl(235, 24%, 19%); 
+	--checkboxes-color: hsl(233, 11%, 84%);
+	--labels-color: hsl(233, 14%, 35%);
+	--checked-label-color: hsl(233, 11%, 84%);
+	--task-border-color: hsl(233, 11%, 84%);
+	--active-clear-task-color: hsl(233, 11%, 84%);
+	--active-new-task-color: hsl(237, 14%, 26%);
+	--filter-buttons-base: hsl(234, 11%, 52%);
+	--filter-buttons-active: hsl(237, 14%, 26%);
+	--filter-buttons-selected: hsl(220, 98%, 61%);
+	--tasks-info-color: hsl(234, 11%, 52%);
 }
 
 /* 
@@ -636,6 +608,19 @@ input[type="radio"],
 }
 
 @media (prefers-color-scheme: dark) {
+	:root {
+		--forms-background: hsl(235, 24%, 19%);
+		--body-background: hsl(235, 21%, 11%);
+		--checkboxes-color: hsl(237, 14%, 26%);
+		--checked-label-color: hsl(237, 14%, 26%);
+		--labels-color: hsl(233, 11%, 84%);
+		--task-border-color: hsl(237, 14%, 26%);
+		--active-new-task-color: hsl(237, 14%, 26%);
+		--filter-buttons-base: hsl(234, 11%, 52%);
+		--filter-buttons-active: hsl(237, 14%, 26%);
+		/* --filter-buttons-selected: hsl(220, 98%, 61%); */
+		--tasks-info-color: hsl(234, 11%, 52%);
+	}
 	/*
 		COLORS 
 	*/
