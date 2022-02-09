@@ -1,11 +1,11 @@
 import React from 'react'
-
 import SingleTask from './SingleTask';
 
 const DeleteTask = ({
   tasks,
   labelClick,
-  deleteTask
+  deleteTask,
+  updateStatus
 }) => {
   return (
     <form id="delete-checked-tasks-form"
@@ -18,6 +18,7 @@ const DeleteTask = ({
             content={task.content}
             labelClick={labelClick}
             deleteTask={deleteTask}
+            updateStatus={updateStatus}
           />
         )}
       </ul>

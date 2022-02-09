@@ -26,6 +26,13 @@ function App() {
     checkbox.checked = !isChecked
   };
 
+  const handleCheckboxClick = (checkbox) => {
+    // toggle the task's 'complete' value in the state
+    const newState = tasks.map(e => e.id === checkbox ? { ...e, complete: !e.complete } : e)
+
+    setTasks(newState)
+  };
+
   // handles deleting a task with its .delete-task button
   const handleDeleteTask = (id) => {
     const newTasks = tasks.filter(e => e.id !== id)
@@ -46,6 +53,7 @@ function App() {
               tasks={tasks}
               labelClick={handleLabelClick}
               deleteTask={handleDeleteTask}
+              updateStatus={handleCheckboxClick}
             />
         }
 
