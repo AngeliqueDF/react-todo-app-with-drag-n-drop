@@ -19,23 +19,23 @@
   <header>
     <div>
       <h1>Todo</h1>
-      <button type="button" class="toggle-dark-theme">
+      <button type="button" class="toggle-dark-theme" aria-label="Change theme">
       </button>
     </div>
   </header>
 
   <main>
-    <form action="" class="add-item-form">
-      <div class="new-task-checkbox"></div>
+    <form action="" class="new-task">
+      <div class="checkbox"></div>
       <input type="text" placeholder="Create a new todo...">
     </form>
 
-    <form id="delete-items" action="" class="delete-items">
+    <form id="delete-checked-tasks-form" action="" class="delete-checked-tasks-form">
       <ul>
 
         <li class="single-task">
           <!-- drag and drop events are attached to inputs -->
-          <input type="checkbox" class="task-checkbox" name="" value="">
+          <input type="checkbox" class="task-checkbox" name="">
 
           <!-- clicking on label checks the adjacent input -->
           <label for="">
@@ -47,7 +47,7 @@
 
         <li class="single-task">
           <!-- drag and drop events are attached to inputs -->
-          <input type="checkbox" class="task-checkbox" name="" value="">
+          <input type="checkbox" class="task-checkbox" name="">
 
           <!-- clicking on label checks the adjacent input -->
           <label for="">
@@ -59,7 +59,7 @@
 
         <li class="single-task">
           <!-- drag and drop events are attached to inputs -->
-          <input type="checkbox" class="task-checkbox" name="" value="">
+          <input type="checkbox" class="task-checkbox" name="">
 
           <!-- clicking on label checks the adjacent input -->
           <label for="">
@@ -71,7 +71,7 @@
 
         <li class="single-task">
           <!-- drag and drop events are attached to inputs -->
-          <input type="checkbox" class="task-checkbox" name="" value="">
+          <input type="checkbox" class="task-checkbox" name="">
 
           <!-- clicking on label checks the adjacent input -->
           <label for="">
@@ -83,7 +83,7 @@
 
         <li class="single-task">
           <!-- drag and drop events are attached to inputs -->
-          <input type="checkbox" class="task-checkbox" name="" value="">
+          <input type="checkbox" class="task-checkbox" name="">
 
           <!-- clicking on label checks the adjacent input -->
           <label for="">
@@ -95,7 +95,7 @@
 
         <li class="single-task">
           <!-- drag and drop events are attached to inputs -->
-          <input type="checkbox" class="task-checkbox" name="" value="">
+          <input type="checkbox" class="task-checkbox" name="">
 
           <!-- clicking on label checks the adjacent input -->
           <label for="">
@@ -115,7 +115,7 @@
           <!-- Add dynamic number --> 2 items left
         </p>
 
-        <button form="delete-items" type="submit" class="clear-tasks">
+        <button form="delete-checked-tasks-form" type="submit" class="clear-tasks">
           Clear Completed
         </button>
       </div>
@@ -128,9 +128,6 @@
       </div>
 
     </div>
-
-
-
   </main>
 
 

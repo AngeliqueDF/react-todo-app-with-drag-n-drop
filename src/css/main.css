@@ -5,6 +5,9 @@
 :root {
 	--app-width: 87%;
 
+	--body-background: hsl(0, 0%, 98%);
+
+	--forms-background: hsl(0, 0%, 98%);
 	--forms-width: 70%;
 	--forms-br: 5px;
 	--form-inputs-padding: 0.8rem 1.1rem;
@@ -12,24 +15,41 @@
 	--forms-font-size: 0.65rem;
 
 	--checkboxes-width: 1rem;
-
-	--primary-bright-blue: hsl(220, 98%, 61%);
 	
-	/* Light theme */	
-	--very-light-gray: hsl(0, 0%, 98%);
-	--very-light-grayish-blue: hsl(236, 33%, 92%);
-	--light-grayish-blue: hsl(233, 11%, 84%);
-	--dark-grayish-blue: hsl(236, 9%, 61%);
-	--very-dark-grayish-blue: hsl(235, 19%, 35%);
+	--primary-color: hsl(233, 11%, 84%);
+	--checkboxes-color: hsl(233, 11%, 84%);
+	--labels-color: hsl(233, 14%, 35%);
+	--checked-label-color: hsl(233, 11%, 84%);
+	--new-task-color: hsl(237, 14%, 26%);
+	--task-border-color: hsl(233, 11%, 84%);
+	--active-clear-task-color: hsl(237, 14%, 26%);
+	--active-new-task-color: hsl(237, 14%, 26%);
+	--filter-buttons-base: hsl(234, 11%, 52%);
+	--filter-buttons-active: hsl(237, 14%, 26%);
+	--filter-buttons-selected: hsl(220, 98%, 61%);
+	--tasks-info-color: hsl(234, 11%, 52%);
 
-	/* Dark theme */
-	--very-dark-blue: hsl(235, 21%, 11%);
-	--very-dark-desaturated-blue: hsl(235, 24%, 19%);
-	--light-grayish-blue: hsl(234, 39%, 85%);
-	--light-grayish-blue-hover: hsl(236, 33%, 92%);
-	--dark-grayish-blue: hsl(234, 11%, 52%);
-	--very-dark-grayish-blue: hsl(233, 14%, 35%);
-	--very-dark-grayish-blue: hsl(237, 14%, 26%);
+	--header-background: url("./../images/bg-mobile-light.jpg");
+
+	--toggle-theme-btn: url('./../images/icon-moon.svg');
+}
+
+body.dark {
+	--forms-background: hsl(235, 24%, 19%);
+	--body-background: hsl(235, 21%, 11%);
+	--checkboxes-color: hsl(237, 14%, 26%);
+	--checked-label-color: hsl(237, 14%, 26%);
+	--labels-color: hsl(233, 11%, 84%);
+	--new-task-color: hsl(233, 11%, 84%);
+	--task-border-color: hsl(237, 14%, 26%);
+	--active-clear-task-color: hsl(233, 11%, 84%);
+	--active-new-task-color: hsl(237, 14%, 26%);
+	--filter-buttons-base: hsl(234, 11%, 52%);
+	--filter-buttons-active: hsl(237, 14%, 26%);
+	--tasks-info-color: hsl(234, 11%, 52%);
+
+	--header-background: url('./../images/bg-mobile-dark.jpg');
+	--toggle-theme-btn: url('./../images/icon-sun.svg');
 }
 
 /* 
@@ -74,31 +94,34 @@ input[type="checkbox"]{
 COLORS
 */
 
-.add-item-form input {
+.new-task input {
 	background-color: transparent;
 }
-.add-item-form,
-.add-item-form input::placeholder,
-.delete-items,
+.new-task,
+.new-task input::placeholder,
+.delete-checked-tasks-form,
 .tasks-filter,
 .tasks-info {
-	background-color: var(--very-light-gray);
+	background-color: var(--forms-background);
 }
 
 html {
-	color: var(--very-dark-grayish-blue);
+	color: var(--primary-color);
 }
 
 body {
-	background-color: var(--very-light-gray);
+	background-color: var(--body-background);
 }
 
 header {
 	color: white;
 }
 
+.single-task label {
+	color: var(--labels-color);
+}
+
 .task-checkbox:active {
-	border-color: var(--very-light-gray);	
 	background-image: linear-gradient(
 		to bottom right,
 		hsl(192, 100%, 67%),
@@ -110,7 +133,7 @@ header {
 
 .task-checkbox:active:after {
 	content: "";
-	background-color: var(--very-light-gray);
+	background-color: var(--forms-background);
 }
 
 .task-checkbox:checked {
@@ -124,23 +147,27 @@ header {
 .tasks-count,
 .clear-tasks,
 .tasks-filter button {
-	color: var(--dark-grayish-blue);
+	color: var(--filter-buttons-base);
+}
+
+.clear-tasks:active {
+	color: var(--active-clear-task-color);
 }
 
 .tasks-filter button:active {
-color: var(--very-dark-grayish-blue)
+	color: var(--filter-buttons-active)
 }
 
-.add-item-form > input:focus {
+.new-task > input:focus {
 	outline: none;
 }
 
 button.filter-applied {
-	color: var(--primary-bright-blue);
+	color: var(--filter-buttons-selected);
 }
 
 .instructions {
-	color: var(--dark-grayish-blue);
+	color: var(--filter-buttons-base);
 }
 
 /* 
@@ -194,11 +221,11 @@ main {
 }
 
 .task-checkbox,
-.new-task-checkbox {
+.checkbox {
 	content: "";
 	margin-right: 1.1rem;
 	padding: 10px;
-	border: 1px solid var(--light-grayish-blue);
+	border: 1px solid var(--checkboxes-color);
 	width: var(--checkboxes-width);
 	height: var(--checkboxes-width);
 	border-radius: 100%;
@@ -206,28 +233,28 @@ main {
 
 /* tasks layout */
 
-.add-item-form {
+.new-task {
 	display: flex;
 	padding: var(--form-inputs-padding);
 	border-radius: var(--forms-br);
 }
 
-.add-item-form{
+.new-task{
 	margin-bottom: var(--forms-margin-bottom);
 }
 
-.add-item-form > input {
+.new-task > input {
 	padding: 0;
 	width: 100%;
 	border: none;
 }
 
-.delete-items {
+.delete-checked-tasks-form {
 	border-radius: var(--forms-br) var(--forms-br) 0 0;
 	margin-bottom: 0;
 }
 
-.delete-items,
+.delete-checked-tasks-form,
 .tasks-filter {
 	box-shadow: 0px 40px 175px rgb(136 136 136 / 30%), -5px 0px 20px rgb(136 136 136 / 2%);
 }
@@ -244,7 +271,7 @@ ul {
 	justify-content: space-between;
 	
 	align-items: center;
-	border-bottom: 1px solid var(--light-grayish-blue);
+	border-bottom: 1px solid var(--task-border-color);
 }
 
 .task-checkbox {
@@ -268,7 +295,7 @@ ul {
 }
 
 /* displays a circle with the same 
-background color as #delete-items
+background color as #delete-checked-tasks-form
  to make the active checkbox look transparent
 */
 .task-checkbox:active:after {
@@ -393,17 +420,18 @@ form{
 	font-size: var(--forms-font-size);
 }
 
-.add-item-form::placeholder {
+.new-task::placeholder {
 	font-size: 1rem;
 }
 
-.add-item-form > input {
-	caret-color: var(--primary-bright-blue);
+.new-task > input {
+	color: var(--new-task-color);
+	caret-color: hsl(220, 98%, 61%);
 }
 
 .task-checkbox:checked + label {
 	text-decoration: line-through;
-	color: var(--light-grayish-blue);
+	color: var(--checked-label-color);
 }
 
 .single-task {
@@ -427,7 +455,7 @@ ASSETS
 */
 
 header {
-	background-image: url("./../images/bg-mobile-light.jpg");
+	background-image: var(--header-background);
 	background-repeat: no-repeat;
 	background-position: top;
 	background-size: 100%;
@@ -435,7 +463,7 @@ header {
 
 .toggle-dark-theme{
 	background-size: contain;
-	background-image: url('./../images/icon-moon.svg');
+	background-image: var(--toggle-theme-btn);
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -471,27 +499,41 @@ input[type="radio"],
 
 @media screen and (min-width: 1440px) {
 
+	:root {
+		--header-background: url("./../images/bg-desktop-light.jpg");
+	}
+
 	/*
 		COLORS 
 	*/
 
-	.tasks-filter {
+	.tasks-state {
+		background-color: var(--forms-background);
+	}
+
+	.tasks-info {
 		background-color: transparent;
+	}
+
+	.tasks-filter button:active {
+		color: var(--primary-color);
+	}
+
+	.tasks-filter {
 		box-shadow: none;
 	}
 
+	/* 
+		LAYOUT
+	*/
+
 	header {
-		background-image: url("./../images/bg-desktop-light.jpg");
 		background-size: 100%;
 		min-height: 60vh;
 		width: 100%;
 		margin: 0 auto;
 	}
 
-	header h1 {
-		font-size: 2.3rem;
-		letter-spacing: 14px;
-	}
 
 	header > div {
     top: 4.2rem;
@@ -508,18 +550,14 @@ input[type="radio"],
 		border-radius: var(--forms-br);
 	}
 
-	form,
-	li.single-task {
-		font-size: 1rem;
-	}
-
-	.add-item-form {
+	.new-task {
 		margin-bottom: 1.5rem;
 	}
 
 	.single-task button {
 		visibility: hidden;
 	}
+	
 	.single-task:hover > button {
 		visibility: visible;
 	}
@@ -527,14 +565,12 @@ input[type="radio"],
 	.tasks-state {
 		width: 100%;
 		display: flex;
-		background-color: transparent; /* keep this value, change child elements' background individually */
 	}
 
 	.tasks-state {
-		background-color: var(--very-light-gray);
 		padding: 0.5rem 0;
 		margin-bottom: 0;
-		border-radius: 0;
+		border-radius: 0 0 var(--forms-br) var(--forms-br);
 
 		display: grid;
 
@@ -543,8 +579,6 @@ input[type="radio"],
 	}
 
 	.tasks-info {
-		background-color: transparent;
-		font-size: 0.8rem;
 		grid-row-start: 1;
 	}
 	
@@ -554,13 +588,6 @@ input[type="radio"],
 		grid-column-end: 3;
 	}
 
-	.tasks-filter button {
-		font-size: 1rem;
-	}
-
-	.tasks-filter button:active {
-		color: var(--very-dark-grayish-blue);
-	}
 
 	.tasks-filter label	{
 		margin-right: 1rem;
@@ -572,77 +599,67 @@ input[type="radio"],
 	.attribution {
 		margin-top: 1rem;
 	}
+
+	/* 
+		TYPOGRAPHY
+	*/
+
+	header h1 {
+		font-size: 2.3rem;
+		letter-spacing: 14px;
+	}
+	
+	form,
+	li.single-task {
+		font-size: 1rem;
+	}
+
+	.tasks-info {
+		font-size: 0.8rem;
+	}
+
+	.tasks-filter button {
+		font-size: 1rem;
+	}
+
+	/* 
+		ASSETS
+	*/
+
+	.tasks-filter {
+		background-color: transparent;
+	}
+
+	header {
+		background-image: var(--header-background);
+	}
 }
 
 @media (prefers-color-scheme: dark) {
+	:root {
+		--forms-background: hsl(235, 24%, 19%);
+		--body-background: hsl(235, 21%, 11%);
+		--checkboxes-color: hsl(237, 14%, 26%);
+		--checked-label-color: hsl(237, 14%, 26%);
+		--labels-color: hsl(233, 11%, 84%);
+		--new-task-color: hsl(233, 11%, 84%);
+		--task-border-color: hsl(237, 14%, 26%);
+		--active-new-task-color: hsl(237, 14%, 26%);
+		--active-clear-task-color: hsl(233, 11%, 84%);
+		--filter-buttons-base: hsl(234, 11%, 52%);
+		--filter-buttons-active: hsl(233, 11%, 84%);
+		--tasks-info-color: hsl(234, 11%, 52%);
+
+		--header-background: url('./../images/bg-mobile-dark.jpg');
+		--toggle-theme-btn: url('./../images/icon-sun.svg');
+	}
 	/*
 		COLORS 
 	*/
 
-	html {
-		color: var(--light-grayish-blue);
-	}
-
-	body {
-		background-color: var(--very-dark-blue);
-	}
-
-	.delete-items,
+	.delete-checked-tasks-form,
 	.tasks-filter {
-		box-shadow: 0px 100px 175px rgb(10 10 10 / 50%), -5px 0px 20px rgb(10 10 10 / 50%);
-	}
-
-	.add-item-form input {
-		color: var(--light-grayish-blue);
-		background-color: transparent;
-	}
-	
-	.add-item-form input::placeholder {
-		color: var(--dark-grayish-blue);
-	}
-
-	
-	.task-checkbox,
-	.new-task-checkbox {
-		border: 1px solid var(--very-dark-grayish-blue)
-	}
-
-	.task-checkbox:active {
-		border-color: var(--very-dark-desaturated-blue);
-	}
-	.task-checkbox:active:after {
-		content: "";
-		background-color: var(--very-dark-desaturated-blue);
-	}
-
-
-	.tasks-state {
-		color:var(--very-dark-grayish-blue)
-	}
-
-	.add-item-form,
-	.add-item-form input::placeholder,
-	.delete-items,
-	.tasks-filter,
-	.tasks-info {
-		background-color: var(--very-dark-desaturated-blue);
-	}
-
-	.tasks-filter button:active,
-	.clear-tasks:active {
-		color: var(--light-grayish-blue);
-	}
-
-	.single-task {
-		border-bottom: 1px solid var(--very-dark-grayish-blue);
-	}
-
-	.instructions {
-		color: var(--dark-grayish-blue);
-	}
-
-	.task-checkbox:checked + label {
-		color: var(--dark-grayish-blue);
+		box-shadow: 0px 10px 30px rgba(20, 10, 20, 0.9), -5px 0px 20px rgb(10 10 10 / 10%);
 	}
 
 	/*
@@ -650,32 +667,46 @@ input[type="radio"],
 	*/
 
 	header {
-		background-image: url('./../images/bg-mobile-dark.jpg');
+		background-image: var(--header-background);
 	}
 
-	button.toggle-dark-theme {
-		background-image: url('./../images/icon-sun.svg');
+	.toggle-dark-theme {
+		background-image: var(--toggle-theme-btn);
 	}
 
 	@media screen and (min-width: 1440px) {
-		header {
-			background-image: url('./../images/bg-desktop-dark.jpg');
-		}
-		
-		.toggle-dark-theme{
-			background-image: url('./../images/icon-sun.svg');
+		:root {
+			--header-background: url('./../images/bg-desktop-dark.jpg');
+			--toggle-theme-btn: url('./../images/icon-sun.svg');
 		}
 
+		/* 
+			COLORS
+		*/
+
 		.tasks-state{
-			background-color: var(--very-dark-desaturated-blue);
+			background-color: var(--forms-background);
 		}
 
 		.tasks-info,
 		.tasks-filter {
 			background-color: transparent
 		}
+
 		.tasks-filter {
 			box-shadow: none;
+		}
+
+		/*
+			ASSETS
+		*/
+
+		header {
+			background-image: var(--header-background);
+		}
+	
+		.toggle-dark-theme {
+			background-image: var(--toggle-theme-btn);
 		}
 	}
 }
