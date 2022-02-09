@@ -21,6 +21,11 @@ function App() {
     setTasks(newTasks)
   };
 
+  // toggling the adjacent checkbox when the label element of a task is clicked
+  const handleLabelClick = (checkbox) => {
+    const isChecked = checkbox.checked
+    checkbox.checked = !isChecked
+  };
 
 
 
