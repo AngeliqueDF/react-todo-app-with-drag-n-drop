@@ -16,7 +16,7 @@ function App() {
     const newTaskId = Math.ceil(Math.random() * 1000)
 
     // adding the new task to the state
-    const newTasks = [...tasks].concat({ id: newTaskId, content })
+    const newTasks = [...tasks].concat({ id: newTaskId, content, complete: false })
     setTasks(newTasks)
   };
 
