@@ -14,7 +14,7 @@ function App() {
     event.preventDefault()
 
     const content = event.target.newTodo.value
-    const newTaskId = Math.ceil(Math.random() * 100)
+    const newTaskId = Math.ceil(Math.random() * 1000)
 
     // adding the new task to the state
     const newTasks = [...tasks].concat({ id: newTaskId, content })
