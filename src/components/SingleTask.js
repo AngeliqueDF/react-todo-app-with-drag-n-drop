@@ -19,7 +19,7 @@ const SingleTask = ({
   };
 
   const handleDeleteClick = (event) => {
-    console.log(id)
+    deleteTask(id)
   };
 
 

@@ -27,7 +27,11 @@ function App() {
     checkbox.checked = !isChecked
   };
 
-
+  // handles deleting a task with its .delete-task button
+  const handleDeleteTask = (id) => {
+    const newTasks = tasks.filter(e => e.id !== id)
+    setTasks(newTasks)
+  };
 
   return (
     <div>
