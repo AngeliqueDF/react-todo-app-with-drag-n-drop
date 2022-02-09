@@ -1,12 +1,13 @@
 import React from 'react'
 
-const TasksInfo = () => {
+const TasksInfo = ({ tasks }) => {
+  const checkedTasks = tasks.filter(e => e.complete === false).length
   return (
     <div className="tasks-state">
 
       <div className="tasks-info">
         <p className="tasks-count">
-          {/* <!-- Add dynamic number -->  */} 2 items left
+          {checkedTasks} items left
         </p>
 
         <button form="delete-checked-tasks-form" type="submit" className="clear-tasks">

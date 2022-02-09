@@ -57,7 +57,9 @@ function App() {
             />
         }
 
-        <TasksInfo />
+        <TasksInfo
+          tasks={tasks}
+        />
       </main>
     </div>
   );
