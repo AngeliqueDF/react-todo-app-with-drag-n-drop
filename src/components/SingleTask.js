@@ -3,6 +3,7 @@ import React from 'react'
 const SingleTask = ({
   id,
   content,
+  complete,
   labelClick,
   deleteTask,
   updateStatus
@@ -34,7 +35,13 @@ const SingleTask = ({
     <li className="single-task">
 
       {/* drag and drop events are attached to inputs */}
-      <input type="checkbox" className="task-checkbox" name={nameAttribute} onClick={handleCheckboxClick} />
+      <input
+        type="checkbox"
+        className="task-checkbox"
+        name={nameAttribute}
+        onClick={handleCheckboxClick}
+        defaultChecked={complete}
+      />
 
       <label
         htmlFor={nameAttribute}

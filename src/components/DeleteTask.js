@@ -19,6 +19,7 @@ const DeleteTask = ({
             labelClick={labelClick}
             deleteTask={deleteTask}
             updateStatus={updateStatus}
+            complete={task.complete}
           />
         )}
       </ul>
