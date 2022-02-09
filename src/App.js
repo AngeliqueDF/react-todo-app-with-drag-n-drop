@@ -10,8 +10,16 @@ import { useState } from 'react';
 function App() {
   const [tasks, setTasks] = useState([])
 
+  const handleNewTaskSubmit = (event) => {
+    event.preventDefault()
 
+    const content = event.target.newTodo.value
+    const newTaskId = Math.ceil(Math.random() * 100)
 
+    // adding the new task to the state
+    const newTasks = [...tasks].concat({ id: newTaskId, content })
+    setTasks(newTasks)
+  };
 
 
 
