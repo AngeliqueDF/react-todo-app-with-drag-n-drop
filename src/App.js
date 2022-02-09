@@ -39,6 +39,11 @@ function App() {
     setTasks(newTasks)
   };
 
+  const handleClearCompleted = () => {
+    const newState = tasks.filter(e => e.complete === false)
+    setTasks(newState)
+  };
+
   return (
     <div>
       <Header />
@@ -59,6 +64,7 @@ function App() {
 
         <TasksInfo
           tasks={tasks}
+          clearCompleted={handleClearCompleted}
         />
       </main>
     </div>

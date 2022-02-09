@@ -1,7 +1,13 @@
 import React from 'react'
 
-const TasksInfo = ({ tasks }) => {
+const TasksInfo = ({ tasks, clearCompleted }) => {
   const checkedTasks = tasks.filter(e => e.complete === false).length
+
+  const handleClearCompleted = (event) => {
+    event.preventDefault()
+    clearCompleted()
+  }
+
   return (
     <div className="tasks-state">
 
@@ -10,7 +16,12 @@ const TasksInfo = ({ tasks }) => {
           {checkedTasks} items left
         </p>
 
-        <button form="delete-checked-tasks-form" type="submit" className="clear-tasks">
+        <button
+          form="delete-checked-tasks-form"
+          type="submit"
+          className="clear-tasks"
+          onClick={handleClearCompleted}
+        >
           Clear Completed
         </button>
       </div>
