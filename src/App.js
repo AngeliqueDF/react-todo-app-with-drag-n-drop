@@ -4,7 +4,7 @@ import './App.css';
 import Header from './components/Header';
 import AddTask from './components/AddTask';
 import TasksInfo from './components/TasksInfo';
-import DeleteTasks from './components/DeleteTasks';
+import DeleteTask from './components/DeleteTask';
 import { useState } from 'react';
 
 function App() {
@@ -43,7 +43,7 @@ function App() {
 
         {
           tasks.length === 0 ? null :
-            <DeleteTasks
+            <DeleteTask
               tasks={tasks}
               labelClick={handleLabelClick}
               deleteTask={handleDeleteTask}

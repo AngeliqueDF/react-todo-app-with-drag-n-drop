@@ -2,7 +2,7 @@ import React from 'react'
 
 import SingleTask from './SingleTask';
 
-const DeleteTasks = ({
+const DeleteTask = ({
   tasks,
   labelClick,
   deleteTask
@@ -25,4 +25,4 @@ const DeleteTasks = ({
   )
 };
 
-export default DeleteTasks
+export default DeleteTask
