@@ -17,6 +17,7 @@ const TasksFilter = ({
         onClick={handleFilterTasks}
         name="all"
         type="button"
+        className={filter === "all" ? "filter-applied" : ""}
       >
         All
       </button>
@@ -25,6 +26,7 @@ const TasksFilter = ({
         onClick={handleFilterTasks}
         name="active"
         type="button"
+        className={filter === "active" ? "filter-applied" : ""}
       >
         Active
       </button>
@@ -33,6 +35,7 @@ const TasksFilter = ({
         onClick={handleFilterTasks}
         name="completed"
         type="button"
+        className={filter === "completed" ? "filter-applied" : ""}
       >
         Completed
       </button>
