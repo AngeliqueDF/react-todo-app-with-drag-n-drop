@@ -60,6 +60,10 @@ body.dark {
 RESETS 
 */
 
+body {
+	margin: 0;
+}
+
 /* Resetting buttons styles */
 
 button {
@@ -440,6 +444,10 @@ form{
 
 .single-task {
 	font-size: var(--forms-font-size);
+}
+
+button {
+	font-family: "Josefin Sans";
 }
 
 .tasks-filter button {
