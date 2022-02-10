@@ -16,7 +16,6 @@ const SingleTask = ({
   const handleLabelClick = (event) => {
     const adjacentCheckbox = event.target.parentNode.childNodes[0]
     labelClick(adjacentCheckbox)
-    updateStatus(id)
   };
 
   const handleDeleteClick = (event) => {
@@ -24,7 +23,7 @@ const SingleTask = ({
   };
 
   // toggle the ['completed'] property
-  const handleCheckboxClick = (event) => {
+  const handleCheckboxChange = (event) => {
     updateStatus(id)
   };
 
@@ -35,9 +34,9 @@ const SingleTask = ({
       <input
         type="checkbox"
         className="task-checkbox"
-        onClick={handleCheckboxClick}
-        defaultChecked={complete}
         id={validId}
+        onChange={handleCheckboxChange}
+        checked={complete}
       />
 
       <label
