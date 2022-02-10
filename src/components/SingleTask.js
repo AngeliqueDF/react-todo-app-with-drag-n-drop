@@ -3,13 +3,15 @@ import React from 'react'
 const SingleTask = ({
   id,
   content,
+  complete,
   labelClick,
   deleteTask,
   updateStatus
 }) => {
 
   // generating a name attribute value from the task's content
-  const nameAttribute = content.toLowerCase().replace(/ /g, "-")
+  const randomNb = Math.ceil(Math.random() * 1000)
+  const nameAttribute = content.toLowerCase().replace(/ /g, "-") + randomNb
 
   // generating an aria-label value
   const ariaLabelValue = `Delete the task "${content}"`
@@ -34,7 +36,13 @@ const SingleTask = ({
     <li className="single-task">
 
       {/* drag and drop events are attached to inputs */}
-      <input type="checkbox" className="task-checkbox" name={nameAttribute} onClick={handleCheckboxClick} />
+      <input
+        type="checkbox"
+        className="task-checkbox"
+        id={nameAttribute}
+        onClick={handleCheckboxClick}
+        defaultChecked={complete}
+      />
 
       <label
         htmlFor={nameAttribute}

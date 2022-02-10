@@ -1,13 +1,23 @@
 import './App.css';
-
 import Header from './components/Header';
 import AddTask from './components/AddTask';
 import TasksInfo from './components/TasksInfo';
 import DeleteTask from './components/DeleteTask';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
   const [tasks, setTasks] = useState([])
+
+  useEffect(() => {
+    const storedTasks = localStorage.getItem('tasks')
+    if (storedTasks) {
+      setTasks(JSON.parse(storedTasks));
+    }
+  }, [])
+
+  const handleToggleTheme = () => {
+    document.body.classList.toggle('dark')
+  };
 
   const handleNewTaskSubmit = (event) => {
     event.preventDefault()
@@ -18,6 +28,7 @@ function App() {
     // adding the new task to the state
     const newTasks = [...tasks].concat({ id: newTaskId, content, complete: false })
     setTasks(newTasks)
+    localStorage.setItem('tasks', JSON.stringify(newTasks))
   };
 
   // toggling the adjacent checkbox when the label element of a task is clicked
@@ -28,25 +39,30 @@ function App() {
 
   const handleCheckboxClick = (checkbox) => {
     // toggle the task's 'complete' value in the state
-    const newState = tasks.map(e => e.id === checkbox ? { ...e, complete: !e.complete } : e)
+    const newTasks = tasks.map(e => e.id === checkbox ? { ...e, complete: !e.complete } : e)
 
-    setTasks(newState)
+    setTasks(newTasks)
+    localStorage.setItem('tasks', JSON.stringify(newTasks))
   };
 
   // handles deleting a task with its .delete-task button
   const handleDeleteTask = (id) => {
     const newTasks = tasks.filter(e => e.id !== id)
     setTasks(newTasks)
+    localStorage.setItem('tasks', JSON.stringify(newTasks))
   };
 
   const handleClearCompleted = () => {
-    const newState = tasks.filter(e => e.complete === false)
-    setTasks(newState)
+    const newTasks = tasks.filter(e => e.complete === false)
+    setTasks(newTasks)
+    localStorage.setItem('tasks', JSON.stringify(newTasks))
   };
 
   return (
     <div>
-      <Header />
+      <Header
+        toggleTheme={handleToggleTheme}
+      />
       <main>
         <AddTask
           addTask={handleNewTaskSubmit}
