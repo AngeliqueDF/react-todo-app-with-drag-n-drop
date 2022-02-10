@@ -78,6 +78,7 @@ function App() {
           tasks.length === 0 ? null :
             <DeleteTask
               tasks={tasks}
+              filter={filter}
               labelClick={handleLabelClick}
               deleteTask={handleDeleteTask}
               updateStatus={handleCheckboxChange}
