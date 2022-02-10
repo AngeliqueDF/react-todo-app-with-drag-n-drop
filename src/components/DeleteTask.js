@@ -7,6 +7,10 @@ const DeleteTask = ({
   deleteTask,
   updateStatus
 }) => {
+
+  // generating valid HTML id value from the task's content
+  const validId = (content, id) => content.toLowerCase().replace(/ /g, "-") + id;
+
   return (
     <form id="delete-checked-tasks-form"
       className="delete-checked-tasks-form">
@@ -15,6 +19,7 @@ const DeleteTask = ({
           <SingleTask
             key={task.id}
             id={task.id}
+            validId={validId(task.content, task.id)}
             content={task.content}
             labelClick={labelClick}
             deleteTask={deleteTask}

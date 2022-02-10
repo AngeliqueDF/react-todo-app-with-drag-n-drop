@@ -23,6 +23,7 @@ function App() {
     event.preventDefault()
 
     const content = event.target.newTodo.value
+    event.target.newTodo.value = ""
     const newTaskId = Math.ceil(Math.random() * 1000)
 
     // adding the new task to the state
@@ -32,15 +33,16 @@ function App() {
   };
 
   // toggling the adjacent checkbox when the label element of a task is clicked
-  const handleLabelClick = (checkbox) => {
-    const isChecked = checkbox.checked
-    checkbox.checked = !isChecked
+  const handleLabelClick = (adjacentCheckbox) => {
+    const isChecked = adjacentCheckbox.checked
+    adjacentCheckbox.checked = !isChecked
   };
 
-  const handleCheckboxClick = (checkbox) => {
+  // this event handler is triggered when the checked property changes due to a click on the task's checkbox or label 
+  const handleCheckboxChange = (checkboxId) => {
     // toggle the task's 'complete' value in the state
-    const newTasks = tasks.map(e => e.id === checkbox ? { ...e, complete: !e.complete } : e)
-
+    const newTasks = tasks.map(e =>
+      e.id === checkboxId ? { ...e, complete: !e.complete } : e)
     setTasks(newTasks)
     localStorage.setItem('tasks', JSON.stringify(newTasks))
   };
@@ -74,7 +76,7 @@ function App() {
               tasks={tasks}
               labelClick={handleLabelClick}
               deleteTask={handleDeleteTask}
-              updateStatus={handleCheckboxClick}
+              updateStatus={handleCheckboxChange}
             />
         }
 
