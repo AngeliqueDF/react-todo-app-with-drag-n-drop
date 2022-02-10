@@ -1,4 +1,3 @@
-import './App.css';
 import Header from './components/Header';
 import AddTask from './components/AddTask';
 import TasksInfo from './components/TasksInfo';

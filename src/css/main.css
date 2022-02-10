@@ -165,6 +165,9 @@ header {
 .tasks-filter button:active {
 	color: var(--filter-buttons-active)
 }
+.new-task > input {
+	color: var(--new-task-color);
+}
 
 .new-task > input:focus {
 	outline: none;
@@ -433,7 +436,6 @@ form{
 }
 
 .new-task > input {
-	color: var(--new-task-color);
 	caret-color: hsl(220, 98%, 61%);
 }
 
@@ -446,6 +448,7 @@ form{
 	font-size: var(--forms-font-size);
 }
 
+.new-task input,
 button {
 	font-family: "Josefin Sans";
 }
