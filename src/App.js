@@ -1,5 +1,4 @@
 import './App.css';
-
 import Header from './components/Header';
 import AddTask from './components/AddTask';
 import TasksInfo from './components/TasksInfo';
@@ -15,6 +14,10 @@ function App() {
       setTasks(JSON.parse(storedTasks));
     }
   }, [])
+
+  const handleToggleTheme = () => {
+    document.body.classList.toggle('dark')
+  };
 
   const handleNewTaskSubmit = (event) => {
     event.preventDefault()
@@ -57,7 +60,9 @@ function App() {
 
   return (
     <div>
-      <Header />
+      <Header
+        toggleTheme={handleToggleTheme}
+      />
       <main>
         <AddTask
           addTask={handleNewTaskSubmit}
