@@ -10,7 +10,8 @@ const SingleTask = ({
 }) => {
 
   // generating a name attribute value from the task's content
-  const nameAttribute = content.toLowerCase().replace(/ /g, "-")
+  const randomNb = Math.ceil(Math.random() * 1000)
+  const nameAttribute = content.toLowerCase().replace(/ /g, "-") + randomNb
 
   // generating an aria-label value
   const ariaLabelValue = `Delete the task "${content}"`
@@ -38,7 +39,7 @@ const SingleTask = ({
       <input
         type="checkbox"
         className="task-checkbox"
-        name={nameAttribute}
+        id={nameAttribute}
         onClick={handleCheckboxClick}
         defaultChecked={complete}
       />
