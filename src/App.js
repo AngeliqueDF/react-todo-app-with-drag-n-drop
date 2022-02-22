@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 
 function App() {
   const [tasks, setTasks] = useState([])
+  const [filter, setFilter] = useState('all')
 
   useEffect(() => {
     const storedTasks = localStorage.getItem('tasks')
@@ -13,6 +14,10 @@ function App() {
       setTasks(JSON.parse(storedTasks));
     }
   }, [])
+
+  const handleFilter = (filter) => {
+    setFilter(filter)
+  };
 
   const handleToggleTheme = () => {
     document.body.classList.toggle('dark')
@@ -73,6 +78,7 @@ function App() {
           tasks.length === 0 ? null :
             <DeleteTask
               tasks={tasks}
+              filter={filter}
               labelClick={handleLabelClick}
               deleteTask={handleDeleteTask}
               updateStatus={handleCheckboxChange}
@@ -81,6 +87,8 @@ function App() {
 
         <TasksInfo
           tasks={tasks}
+          filter={filter}
+          updateFilter={handleFilter}
           clearCompleted={handleClearCompleted}
         />
       </main>

@@ -3,6 +3,7 @@ import SingleTask from './SingleTask';
 
 const DeleteTask = ({
   tasks,
+  filter,
   labelClick,
   deleteTask,
   updateStatus
@@ -11,11 +12,19 @@ const DeleteTask = ({
   // generating valid HTML id value from the task's content
   const validId = (content, id) => content.toLowerCase().replace(/ /g, "-") + id;
 
+  let tasksDisplayed = tasks
+
+  if (filter === "completed") {
+    tasksDisplayed = tasks.filter(e => e.complete === true)
+  } else if (filter === "active") {
+    tasksDisplayed = tasks.filter(e => e.complete === false)
+  }
+
   return (
     <form id="delete-checked-tasks-form"
       className="delete-checked-tasks-form">
       <ul>
-        {tasks.map(task =>
+        {tasksDisplayed.map(task =>
           <SingleTask
             key={task.id}
             id={task.id}

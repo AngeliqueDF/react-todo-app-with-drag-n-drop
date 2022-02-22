@@ -1,6 +1,12 @@
 import React from 'react'
+import TasksFilter from './TasksFilter'
 
-const TasksInfo = ({ tasks, clearCompleted }) => {
+const TasksInfo = ({
+  tasks,
+  clearCompleted,
+  filter,
+  updateFilter
+}) => {
   const checkedTasks = tasks.filter(e => e.complete === false).length
 
   const handleClearCompleted = (event) => {
@@ -26,11 +32,11 @@ const TasksInfo = ({ tasks, clearCompleted }) => {
         </button>
       </div>
 
-      <div className="tasks-filter">
-        <button type="button" className="filter-applied">All</button>
-        <button type="button">Active</button>
-        <button type="button">Completed</button>
-      </div>
+      <TasksFilter
+        tasks={tasks}
+        filter={filter}
+        updateFilter={updateFilter}
+      />
 
     </div>
   )
