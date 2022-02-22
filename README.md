@@ -10,6 +10,8 @@
 
 # Todo app
 
+![Screen shot of the todo app](./src/images/screenshot.png)
+
 ## Overview
 
 This app will help you keep track of your tasks. Find your todos exactly the way you left them when you reopen the browser.
