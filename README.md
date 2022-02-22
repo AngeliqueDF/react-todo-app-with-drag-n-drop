@@ -38,8 +38,8 @@ Below are the original requirements:
   - Functional Components
   - Hooks: ``useState``, ``useEffect``
 - ``localstorage`` to store the tasks and their status.
-- ``CSS Grids`` for the ``.tasks-state`` component.
-- ``CSS variables``.
+- ``CSS Grids`` for the ``.tasks-state`` component's mobile/desktop styling.
+- ``CSS variables`` to avoir repetitiveness in the code.
 - ``flexbox`` for the layout.
 - Semantic and accessible HTML5.
 - Responsive layout.
@@ -51,9 +51,10 @@ Below are the original requirements:
    2. Assign classes and ids for styling and upcoming tests.
 2. Write the CSS to match the design.
    1. Build the layout.
-   2. Style the components.
-   3. Customize the checkboxes.
-3. Start implementing React.js
+   2. Style individual elements.
+   3. Use ``CSS variables`` for easy reassignment across media queries.
+   4. Customize the checkboxes.
+3. Use React.js
    1. Divide the app in components.
    2. Code the app's features
       1. Initialize state variables
