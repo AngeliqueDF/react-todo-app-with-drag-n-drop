@@ -1,5 +1,6 @@
 import React from 'react'
 import SingleTask from './SingleTask';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 const DeleteTask = ({
   tasks,
@@ -23,21 +24,47 @@ const DeleteTask = ({
   return (
     <form id="delete-checked-tasks-form"
       className="delete-checked-tasks-form">
-      <ul>
-        {tasksDisplayed.map(task =>
-          <SingleTask
-            key={task.id}
-            id={task.id}
-            validId={validId(task.content, task.id)}
-            content={task.content}
-            labelClick={labelClick}
-            deleteTask={deleteTask}
-            updateStatus={updateStatus}
-            complete={task.complete}
-          />
-        )}
-      </ul>
-    </form>
+      <DragDropContext>
+        <Droppable
+          droppableId='tasks'
+        >
+          {(provided) => (
+            <ul
+              {...provided.droppableProps}
+              ref={provided.innerRef}
+            >
+              {tasksDisplayed.map((e, index) =>
+                <Draggable
+                  key={e.id}
+                  draggableId={`${e.id}`}
+                  index={index}
+                >
+                  {(provided) => (
+                    <div
+                      ref={provided.innerRef}
+                      {...provided.draggableProps}
+                      {...provided.dragHandleProps}
+                    >
+                      <SingleTask
+                        id={e.id}
+                        validId={validId(e.content, e.id)}
+                        content={e.content}
+                        complete={e.complete}
+                        labelClick={labelClick}
+                        deleteTask={deleteTask}
+                        updateStatus={updateStatus}
+                      />
+                    </div>
+                  )}
+                </Draggable>
+              )}
+              {provided.placeholder}
+            </ul>
+          )}
+        </Droppable>
+      </DragDropContext>
+
+    </form >
   )
 };
 
