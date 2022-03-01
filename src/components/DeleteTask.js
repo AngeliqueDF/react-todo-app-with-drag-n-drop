@@ -7,7 +7,8 @@ const DeleteTask = ({
   filter,
   labelClick,
   deleteTask,
-  updateStatus
+  updateStatus,
+  reorderTasks
 }) => {
 
   // generating valid HTML id value from the task's content
@@ -21,10 +22,14 @@ const DeleteTask = ({
     tasksDisplayed = tasks.filter(e => e.complete === false)
   }
 
+  const handleDragEnd = (result) => {
+    reorderTasks(result)
+  }
+
   return (
     <form id="delete-checked-tasks-form"
       className="delete-checked-tasks-form">
-      <DragDropContext>
+      <DragDropContext onDragEnd={handleDragEnd}>
         <Droppable
           droppableId='tasks'
         >
