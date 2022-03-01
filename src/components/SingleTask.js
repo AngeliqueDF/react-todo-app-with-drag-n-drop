@@ -2,6 +2,8 @@ import React from 'react'
 
 const SingleTask = ({
   id,
+  filter,
+  filterTasks,
   validId,
   content,
   complete,
@@ -27,10 +29,12 @@ const SingleTask = ({
     updateStatus(id)
   };
 
-  return (
-    <li className="single-task">
+  const style = {
+    display: filterTasks(filter, complete)
+  }
 
-      {/* drag and drop events are attached to inputs */}
+  return (
+    <li className="single-task" style={style}>
       <input
         type="checkbox"
         className="task-checkbox"

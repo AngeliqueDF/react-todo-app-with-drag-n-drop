@@ -5,6 +5,7 @@ import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 const DeleteTask = ({
   tasks,
   filter,
+  filterTasks,
   labelClick,
   deleteTask,
   updateStatus,
@@ -13,14 +14,6 @@ const DeleteTask = ({
 
   // generating valid HTML id value from the task's content
   const validId = (content, id) => content.toLowerCase().replace(/ /g, "-") + id;
-
-  let tasksDisplayed = tasks
-
-  if (filter === "completed") {
-    tasksDisplayed = tasks.filter(e => e.complete === true)
-  } else if (filter === "active") {
-    tasksDisplayed = tasks.filter(e => e.complete === false)
-  }
 
   const handleDragEnd = (result) => {
     reorderTasks(result)
@@ -38,7 +31,7 @@ const DeleteTask = ({
               {...provided.droppableProps}
               ref={provided.innerRef}
             >
-              {tasksDisplayed.map((e, index) =>
+              {tasks.map((e, index) =>
                 <Draggable
                   key={e.id}
                   draggableId={`${e.id}`}
@@ -51,6 +44,8 @@ const DeleteTask = ({
                       {...provided.dragHandleProps}
                     >
                       <SingleTask
+                        filter={filter}
+                        filterTasks={filterTasks}
                         id={e.id}
                         validId={validId(e.content, e.id)}
                         content={e.content}

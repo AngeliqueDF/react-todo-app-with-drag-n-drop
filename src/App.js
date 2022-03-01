@@ -19,6 +19,15 @@ function App() {
     setFilter(filter)
   };
 
+  const filterTasks = (currentFilter, taskStatus) => {
+    if (currentFilter === 'completed' && !taskStatus) {
+      return 'none'
+    } else if (currentFilter === 'active' && taskStatus) {
+      return 'none'
+    }
+    return 'flex'
+  }
+
   const handleToggleTheme = () => {
     document.body.classList.toggle('dark')
   };
@@ -66,7 +75,6 @@ function App() {
 
   // handles dropping a task over another, also works with the keyboard
   const handleDragEnd = (result) => {
-    console.log(result);
     const { destination, source, draggableId } = result
 
     // user has dropped the tasks outside of the droppable area
@@ -111,6 +119,7 @@ function App() {
             <DeleteTask
               tasks={tasks}
               filter={filter}
+              filterTasks={filterTasks}
               labelClick={handleLabelClick}
               deleteTask={handleDeleteTask}
               updateStatus={handleCheckboxChange}
