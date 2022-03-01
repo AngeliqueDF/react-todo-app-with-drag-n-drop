@@ -64,6 +64,38 @@ function App() {
     localStorage.setItem('tasks', JSON.stringify(newTasks))
   };
 
+  // handles dropping a task over another, also works with the keyboard
+  const handleDragEnd = (result) => {
+    console.log(result);
+    const { destination, source, draggableId } = result
+
+    // user has dropped the tasks outside of the droppable area
+    if (!destination) return
+
+    // user has put the item back to its original place
+    if (
+      destination.droppableId === source.droppableId
+      && destination.index === source.index
+    ) {
+      return
+    }
+
+    // Copying the tasks to avoid mutating state
+    const copyTasks = [...tasks]
+
+    // Removing the task from its previous place
+    copyTasks.splice(source.index, 1)
+
+    // Searching in the state for the dropped task's information (currently we only have its id, in a string type)
+    const taskMoved = tasks.find(e => e.id === Number(draggableId))
+
+    // Placing the task at its new place
+    copyTasks.splice(destination.index, 0, taskMoved)
+
+    setTasks(copyTasks)
+    localStorage.setItem('tasks', JSON.stringify(copyTasks))
+  }
+
   return (
     <div>
       <Header
@@ -82,6 +114,7 @@ function App() {
               labelClick={handleLabelClick}
               deleteTask={handleDeleteTask}
               updateStatus={handleCheckboxChange}
+              reorderTasks={handleDragEnd}
             />
         }
 
