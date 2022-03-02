@@ -72,7 +72,13 @@
 
 I started building this project right before I began learning ``React.js``. It was a good opportunity to practice these skills on my own and use the best the library has to offer.
 
-This app is my solution to the Todo app challenge on Frontend Mentor. 
+This app is my solution to the Todo app challenge on Frontend Mentor.
+
+<figure style="text-align:center;">
+<img src="./src/images/screenshot-mobile.png" width="375" height="656px" alt="Screenshot of the order summary component on mobile.">
+<figcaption>Screenshot of the Todo App on mobile.</figcaption>
+</figure>
+
 
 ## Features
 
