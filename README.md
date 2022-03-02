@@ -37,16 +37,16 @@
 ## Links
 
 <p>
-<a href="/.github/README.md">GitHub repo</a> • <a href="/.github/CONTRIBUTING.md">Live demo </a> • <a href="/.github/PULL_REQUEST_TEMPLATE.md">Project board</a> • <a href="/.github/PULL_REQUEST_TEMPLATE.md">Issues</a> • <a href="/.github/PULL_REQUEST_TEMPLATE.md">Pull requests</a>
+<a href="https://github.com/AngeliqueDF/todo-app-frontend-mentor">GitHub repo</a> • <a href="/.github/CONTRIBUTING.md">Live demo </a> • <a href="https://github.com/AngeliqueDF/todo-app-frontend-mentor/projects">Project board</a> • <a href="https://github.com/AngeliqueDF/todo-app-frontend-mentor/issues?q=">Issues</a> • <a href="https://github.com/AngeliqueDF/todo-app-frontend-mentor/pulls?q=">Pull requests</a>
 </p>
 
 ## How to run the project
 
-1. ``git clone HTTPS_REPO_URL MY-FOLDER-NAME``
+1. ``git clone https://github.com/AngeliqueDF/todo-app-frontend-mentor.git MY-FOLDER-NAME``
 2. ``cd MY-FOLDER-NAME``
 3. ``npm install``
 4. `` npm start ``
-5. visit ``http://localhost:8888``
+5. visit ``http://localhost:3000``
 
 <br />
 
@@ -103,7 +103,7 @@ This app is my solution to the Todo app challenge on Frontend Mentor.
 
 ## How I built this project
 
-The web app relies on ``localStorage`` to store data in the browser. It doesn't use a server for the backend.
+This React web app relies on ``localStorage`` to store data in the browser. It doesn't use a server for the backend.
 
 1. Start by structuring the page with semantic and accessible HTML.
    1. Check W3C compliance with the website or extension.
@@ -111,11 +111,11 @@ The web app relies on ``localStorage`` to store data in the browser. It doesn't 
 2. Style the page with a mobile-first approach.
 3. Add functionality with React.js.
 
-[Visit my portfolio site, to see how I managed the challenges I faced while building this app.](https://adf.dev)
+<!-- [Visit my portfolio site, to see how I managed the challenges I faced while building this app.](https://adf.dev) -->
 
 ## Status
 
-This web app still needs a few improvements.
+This web app has a few improvements planned.
 
 ### Planned changes
 
