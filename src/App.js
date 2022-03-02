@@ -5,7 +5,38 @@ import DeleteTask from './components/DeleteTask';
 import { useEffect, useState } from 'react';
 
 function App() {
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState([
+    {
+      id: 0,
+      complete: true,
+      content: 'Complete online JavaScript course'
+    },
+    {
+      id: 1,
+      complete: false,
+      content: 'Jog around the park 3x'
+    },
+    {
+      id: 0,
+      complete: false,
+      content: '10 minutes meditation'
+    },
+    {
+      id: 0,
+      complete: false,
+      content: 'Read for 1 hour'
+    },
+    {
+      id: 0,
+      complete: false,
+      content: 'Pick up groceries'
+    },
+    {
+      id: 0,
+      complete: false,
+      content: 'Complete Todo App on Frontend Mentor'
+    },
+  ])
   const [filter, setFilter] = useState('all')
 
   useEffect(() => {
