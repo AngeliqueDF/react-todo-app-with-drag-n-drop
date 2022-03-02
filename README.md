@@ -14,7 +14,7 @@
 
 ## Overview
 
-*This app will help you keep track of your tasks. Find them exactly the way you left them even when you reload the page or reopen the browser.*
+_This app will help you keep track of your tasks. Find them exactly the way you left them even when you reload the page or reopen the browser._
 
 [![Under Development](https://img.shields.io/badge/under-development-orange.svg)]() ![GitHub issues](https://img.shields.io/github/issues/AngeliqueDF/todo-app-frontend-mentor) ![GitHub closed issues](https://img.shields.io/github/issues-closed/AngeliqueDF/todo-app-frontend-mentor?color=green)
 
@@ -28,17 +28,18 @@
 
 ## How to run the project
 
-1. ``git clone https://github.com/AngeliqueDF/todo-app-frontend-mentor.git MY-FOLDER-NAME``
-2. ``cd MY-FOLDER-NAME``
-3. ``npm install``
-4. `` npm start ``
-5. visit ``http://localhost:3000``
+1. `git clone https://github.com/AngeliqueDF/todo-app-frontend-mentor.git MY-FOLDER-NAME`
+2. `cd MY-FOLDER-NAME`
+3. `npm install`
+4. `npm start`
+5. visit `http://localhost:3000`
 
 <br />
 
-## The challenge 
+## The challenge
 
 > Users should be able to:
+>
 > - View the optimal layout for the app depending on their device's screen size.
 > - See hover states for all interactive elements on the page.
 > - Add new todos to the list.
@@ -49,20 +50,20 @@
 > - Toggle light and dark mode.
 > - **Bonus**: Drag and drop to reorder items on the list.
 >
-> *[From Frontend Mentor](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW)*
+> _[From Frontend Mentor](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW)_
 
 <br />
 
-
 ## Description
 
-I started building this project right before I began learning ``React.js``. It was a good opportunity to practice these skills on my own and use the best the library has to offer.
+I started building this project right before I began learning `React.js`. It was a good opportunity to practice these skills on my own and use the best the library has to offer.
 
 This app is my solution to the Todo app challenge on Frontend Mentor.
 
 <p align="center">
 <img src="./src/images/screenshot-mobile.png" width="375px" height="656px" style="margin: 0 auto;" alt="Screenshot of the order summary component on mobile.">
 </p>
+Screenshot of the Todo App on mobile.
 
 ## Features
 
@@ -75,11 +76,11 @@ This app is my solution to the Todo app challenge on Frontend Mentor.
 
 ## Technologies
 
-- ``React.js`` to build the UI and its functionalities with hooks and functional components.
-- ``localstorage`` to store the tasks and their status.
-- ``CSS Grids`` for the ``.tasks-state`` component's mobile/desktop styling.
-- ``CSS variables`` to avoir repetitiveness in the code.
-- ``flexbox`` for the layout.
+- `React.js` to build the UI and its functionalities with hooks and functional components.
+- `localstorage` to store the tasks and their status.
+- `CSS Grids` for the `.tasks-state` component's mobile/desktop styling.
+- `CSS variables` to avoir repetitiveness in the code.
+- `flexbox` for the layout.
 - Semantic and accessible HTML5.
 - Responsive layout.
 
@@ -87,7 +88,7 @@ This app is my solution to the Todo app challenge on Frontend Mentor.
 
 ## How I built this project
 
-This React web app relies on ``localStorage`` to store data in the browser. It doesn't use a server for the backend.
+This React web app relies on `localStorage` to store data in the browser. It doesn't use a server for the backend.
 
 1. Start by structuring the page with semantic and accessible HTML.
    1. Check W3C compliance with the website or extension.
