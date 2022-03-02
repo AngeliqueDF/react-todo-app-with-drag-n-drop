@@ -77,7 +77,6 @@ This app is my solution to the Todo app challenge on Frontend Mentor.
 <p align="center">
 <img src="./src/images/screenshot-mobile.png" width="375px" height="656px" style="margin: 0 auto;" alt="Screenshot of the order summary component on mobile.">
 </p>
-Screenshot of the Todo App on mobile.
 
 ## Features
 
