@@ -1,28 +1,57 @@
 - [Todo app](#todo-app)
   - [Overview](#overview)
-  - [Description](#description)
-  - [Technologies](#technologies)
-  - [My process](#my-process)
+  - [Links](#links)
   - [How to run the project](#how-to-run-the-project)
+  - [The challenge](#the-challenge)
+  - [Description](#description)
+  - [Features](#features)
+  - [Technologies](#technologies)
+  - [How I built this project](#how-i-built-this-project)
   - [Status](#status)
     - [Planned changes](#planned-changes)
   - [Sources](#sources)
+  - [Useful references](#useful-references)
 
 # Todo app
 
 ![Screen shot of the todo app](./src/images/screenshot.png)
 
+<div align="center">
+  <img src="./src/images/logo-html5.svg">
+  <img src="./src/images/logo-css3.svg">
+  <img src="./src/images/logo-reactjs.svg">
+  <!-- <img src="./src/images/logo-jestjs-large.svg">
+  <img src="./src/images/logo-cypress.png" style="width:72px; height:24px"> -->
+</div>
+
+<br />
+
 ## Overview
 
-This app will help you keep track of your tasks. Find your todos exactly the way you left them when you reopen the browser.
+*This app will help you keep track of your tasks. Find them exactly the way you left them even when you reload the page or reopen the browser.*
 
-## Description
+[![Under Development](https://img.shields.io/badge/under-development-orange.svg)]() ![GitHub issues](https://img.shields.io/github/issues/AngeliqueDF/todo-app-frontend-mentor) ![GitHub closed issues](https://img.shields.io/github/issues-closed/AngeliqueDF/todo-app-frontend-mentor?color=green)
 
-I started this project right before I began learning React.js. It was a good opportunity to practice my skills on my own and use the best the library has to offer. 
+<br />
 
-Below are the original requirements:
+## Links
 
-> ## The challenge
+<p>
+<a href="/.github/README.md">GitHub repo</a> • <a href="/.github/CONTRIBUTING.md">Live demo </a> • <a href="/.github/PULL_REQUEST_TEMPLATE.md">Project board</a> • <a href="/.github/PULL_REQUEST_TEMPLATE.md">Issues</a> • <a href="/.github/PULL_REQUEST_TEMPLATE.md">Pull requests</a>
+</p>
+
+## How to run the project
+
+1. ``git clone HTTPS_REPO_URL MY-FOLDER-NAME``
+2. ``cd MY-FOLDER-NAME``
+3. ``npm install``
+4. `` npm start ``
+5. visit ``http://localhost:8888``
+
+<br />
+
+## The challenge 
+
 > Users should be able to:
 > - View the optimal layout for the app depending on their device's screen size.
 > - See hover states for all interactive elements on the page.
@@ -33,12 +62,30 @@ Below are the original requirements:
 > - Clear all completed todos.
 > - Toggle light and dark mode.
 > - **Bonus**: Drag and drop to reorder items on the list.
+>
+> *[From Frontend Mentor](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW)*
+
+<br />
+
+
+## Description
+
+I started building this project right before I began learning ``React.js``. It was a good opportunity to practice these skills on my own and use the best the library has to offer.
+
+This app is my solution to the Todo app challenge on Frontend Mentor. 
+
+## Features
+
+- Add, update, and delete tasks as you go.
+- Responsive interface.
+- Light/dark theme.
+- Accessible drag and drop to reorder tasks.
+
+<br />
 
 ## Technologies
 
-- ``React.js`` to build the UI and its functionalities.
-  - Functional Components
-  - Hooks: ``useState``, ``useEffect``
+- ``React.js`` to build the UI and its functionalities with hooks and functional components.
 - ``localstorage`` to store the tasks and their status.
 - ``CSS Grids`` for the ``.tasks-state`` component's mobile/desktop styling.
 - ``CSS variables`` to avoir repetitiveness in the code.
@@ -46,33 +93,19 @@ Below are the original requirements:
 - Semantic and accessible HTML5.
 - Responsive layout.
 
-## My process
+<br />
 
-1. Start with writing the HTML structure. 
-   1. Keep the layout accessible and semantically correct.
-   2. Assign classes and ids for styling and upcoming tests.
-2. Write the CSS to match the design.
-   1. Build the layout.
-   2. Style individual elements.
-   3. Use ``CSS variables`` for easy reassignment across media queries.
-   4. Customize the checkboxes.
-3. Use React.js
-   1. Divide the app in components.
-   2. Code the app's features
-      1. Initialize state variables
-      2. Write event handlers
+## How I built this project
 
-## How to run the project
+The web app relies on ``localStorage`` to store data in the browser. It doesn't use a server for the backend.
 
-[Live demo hosted on GitHub pages]()
+1. Start by structuring the page with semantic and accessible HTML.
+   1. Check W3C compliance with the website or extension.
+   2. Use MDN to make sure elements hierarchy is valid.
+2. Style the page with a mobile-first approach.
+3. Add functionality with React.js.
 
-or
-
-1. ``git clone ``
-2. ``cd folder``
-3. ``npm install``
-4. `` npm start ``
-5. visit [``http://localhost:3000``](http://localhost:3000)
+[Visit my portfolio site, to see how I managed the challenges I faced while building this app.](https://adf.dev)
 
 ## Status
 
@@ -82,11 +115,17 @@ This web app still needs a few improvements.
 
 - [ ] Add privacy consent popup.
 - [ ] Add tests.
-- [ ] Add drag and drop feature.
+- [x] Add drag and drop feature.
 - [ ] Add hover states.
 
-[See the advancement of the project here.](https://github.com/AngeliqueDF/todo-app-frontend-mentor/projects)
+[See the project board here.](https://github.com/AngeliqueDF/todo-app-frontend-mentor/projects)
 
 ## Sources
 
-[Todo app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW)
+- [Todo app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+
+## Useful references
+
+- [How to use React beautiful drag and drop](https://egghead.io/lessons/react-create-and-style-a-list-of-data-with-react) this tutorial by one of the maintainers uses class components. Still it can be useful to understand how to setup React Beautiful Drag and Drop.
+
+- [Finally this tutorial on freeCodeCamp definitely helped me complete the challenge.](https://www.freecodecamp.org/news/how-to-add-drag-and-drop-in-react-with-react-beautiful-dnd/)
