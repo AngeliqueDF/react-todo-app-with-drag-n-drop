@@ -109,7 +109,8 @@ COLORS
 .new-task input::placeholder,
 .delete-checked-tasks-form,
 .tasks-filter,
-.tasks-info {
+.tasks-info,
+.single-task {
 	background-color: var(--forms-background);
 }
 
