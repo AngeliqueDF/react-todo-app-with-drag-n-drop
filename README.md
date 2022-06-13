@@ -1,17 +1,3 @@
-- [Todo app](#todo-app)
-  - [Overview](#overview)
-  - [Links](#links)
-  - [How to run the project](#how-to-run-the-project)
-  - [The challenge](#the-challenge)
-  - [Description](#description)
-  - [Features](#features)
-  - [Technologies](#technologies)
-  - [How I built this project](#how-i-built-this-project)
-  - [Status](#status)
-    - [Planned changes](#planned-changes)
-  - [Sources](#sources)
-  - [Useful references](#useful-references)
-
 # Todo app
 
 ![Screen shot of the todo app](./src/images/screenshot.png)
