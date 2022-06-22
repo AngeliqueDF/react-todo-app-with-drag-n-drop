@@ -16,14 +16,12 @@
 
 *This app will help you keep track of your tasks. Find them exactly the way you left them even when you reload the page or reopen the browser.*
 
-[![Under Development](https://img.shields.io/badge/under-development-orange.svg)]() ![GitHub issues](https://img.shields.io/github/issues/AngeliqueDF/todo-app-frontend-mentor) ![GitHub closed issues](https://img.shields.io/github/issues-closed/AngeliqueDF/todo-app-frontend-mentor?color=green)
-
 <br />
 
 ## Links
 
 <p>
-<a href="https://github.com/AngeliqueDF/todo-app-frontend-mentor">GitHub repo</a> • <a href="/.github/CONTRIBUTING.md">Live demo </a> • <a href="https://github.com/AngeliqueDF/todo-app-frontend-mentor/projects">Project board</a> • <a href="https://github.com/AngeliqueDF/todo-app-frontend-mentor/issues?q=">Issues</a> • <a href="https://github.com/AngeliqueDF/todo-app-frontend-mentor/pulls?q=">Pull requests</a>
+<a href="https://github.com/AngeliqueDF/todo-app-frontend-mentor">GitHub repo</a>
 </p>
 
 ## How to run the project
