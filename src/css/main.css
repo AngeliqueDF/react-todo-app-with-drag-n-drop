@@ -667,8 +667,20 @@ ASSETS
 	background-image: var(--toggle-theme-btn);
 }
 
-@media screen and (min-width: 1440px) {
+.attribution {
+	font-size: 11px;
+	text-align: center;
+	order: 5;
+	position: fixed;
+	bottom: 1rem;
+	left: 0;
+	right: 0;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
 
+@media screen and (min-width: 1440px) {
 	/* 
 		COLORS
 	*/
