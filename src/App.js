@@ -152,6 +152,11 @@ function App() {
 					updateFilter={handleFilter}
 					clearCompleted={handleClearCompleted}
 				/>
+				{tasks.length ? (
+					<p className="list-instructions">Drag and drop to reorder list</p>
+				) : (
+					""
+				)}
 			</main>
 		</div>
 	);
