@@ -32,7 +32,7 @@
 	--light-mobile-header-background: url("./../images/bg-mobile-light.jpg");
 	--light-desktop-header-background: url("./../images/bg-desktop-light.jpg");
 
-	--toggle-theme-btn: url('./../images/icon-moon.svg');
+	--toggle-theme-btn: url("./../images/icon-moon.svg");
 }
 
 body.dark {
@@ -49,11 +49,10 @@ body.dark {
 	--filter-buttons-active: hsl(233, 11%, 84%);
 	--tasks-info-color: hsl(234, 11%, 52%);
 
+	--dark-mobile-header-background: url("./../images/bg-mobile-dark.jpg");
+	--dark-desktop-header-background: url("./../images/bg-desktop-dark.jpg");
 
-	--dark-mobile-header-background: url('./../images/bg-mobile-dark.jpg');
-	--dark-desktop-header-background: url('./../images/bg-desktop-dark.jpg');
-	
-	--toggle-theme-btn: url('./../images/icon-sun.svg');
+	--toggle-theme-btn: url("./../images/icon-sun.svg");
 }
 
 /* 
@@ -91,7 +90,7 @@ button:focus {
 
 /* Resetting input checkboxes */
 
-input[type="checkbox"]{
+input[type="checkbox"] {
 	appearance: none;
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -164,7 +163,7 @@ header {
 }
 
 .tasks-filter button:active {
-	color: var(--filter-buttons-active)
+	color: var(--filter-buttons-active);
 }
 .new-task > input {
 	color: var(--new-task-color);
@@ -202,10 +201,10 @@ header > div {
 	height: 100%;
 	width: var(--app-width);
 	margin: 0 auto;
-	
+
 	position: relative;
 	top: 2.5rem;
-	
+
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -216,7 +215,7 @@ header h1 {
 	margin: 0;
 }
 
-.toggle-dark-theme{
+.toggle-dark-theme {
 	height: 1.2rem;
 	width: 1.2rem;
 	padding: 0;
@@ -251,7 +250,7 @@ main {
 	border-radius: var(--forms-br);
 }
 
-.new-task{
+.new-task {
 	margin-bottom: var(--forms-margin-bottom);
 }
 
@@ -268,7 +267,8 @@ main {
 
 .delete-checked-tasks-form,
 .tasks-filter {
-	box-shadow: 0px 40px 175px rgb(136 136 136 / 30%), -5px 0px 20px rgb(136 136 136 / 2%);
+	box-shadow: 0px 40px 175px rgb(136 136 136 / 30%),
+		-5px 0px 20px rgb(136 136 136 / 2%);
 }
 
 ul {
@@ -281,7 +281,7 @@ ul {
 
 	display: flex;
 	justify-content: space-between;
-	
+
 	align-items: center;
 	border-bottom: 1px solid var(--task-border-color);
 }
@@ -337,7 +337,7 @@ and the checkbox appear next to each other
 because their parent is a flex element */
 .task-checkbox:checked:active:before {
 	display: none;
-}	
+}
 
 .single-task label {
 	width: 100%;
@@ -428,7 +428,6 @@ header h1 {
 	letter-spacing: 11px;
 }
 
-form{
 	font-size: var(--forms-font-size);
 }
 
@@ -477,7 +476,7 @@ header {
 	background-size: 100%;
 }
 
-.toggle-dark-theme{
+.toggle-dark-theme {
 	background-size: contain;
 	background-image: var(--toggle-theme-btn);
 	background-repeat: no-repeat;
@@ -494,7 +493,7 @@ header {
 .delete-task {
 	background-size: contain;
 	background-repeat: no-repeat;
-	background-image: url('./../images/icon-cross.svg');
+	background-image: url("./../images/icon-cross.svg");
 	background-position: center;
 }
 
@@ -545,9 +544,8 @@ input[type="radio"],
 		margin: 0 auto;
 	}
 
-
 	header > div {
-    top: 4.2rem;
+		top: 4.2rem;
 	}
 
 	main,
@@ -557,7 +555,7 @@ input[type="radio"],
 
 	main {
 		position: absolute;
-    top: 8.5rem;
+		top: 8.5rem;
 		border-radius: var(--forms-br);
 	}
 
@@ -568,7 +566,7 @@ input[type="radio"],
 	.single-task button {
 		visibility: hidden;
 	}
-	
+
 	.single-task:hover > button {
 		visibility: visible;
 	}
@@ -592,15 +590,14 @@ input[type="radio"],
 	.tasks-info {
 		grid-row-start: 1;
 	}
-	
+
 	.tasks-filter {
 		grid-row-start: 1;
 		grid-column-start: 2;
 		grid-column-end: 3;
 	}
 
-
-	.tasks-filter label	{
+	.tasks-filter label {
 		margin-right: 1rem;
 	}
 
@@ -619,7 +616,7 @@ input[type="radio"],
 		font-size: 2.3rem;
 		letter-spacing: 14px;
 	}
-	
+
 	form,
 	li.single-task {
 		font-size: 1rem;
@@ -652,7 +649,8 @@ input[type="radio"],
 
 .dark .delete-checked-tasks-form,
 .dark .tasks-filter {
-	box-shadow: 0px 10px 30px rgba(20, 10, 20, 0.9), -5px 0px 20px rgb(10 10 10 / 10%);
+	box-shadow: 0px 10px 30px rgba(20, 10, 20, 0.9),
+		-5px 0px 20px rgb(10 10 10 / 10%);
 }
 
 /*
@@ -685,15 +683,13 @@ ASSETS
 		COLORS
 	*/
 
-	.dark 
-
-	.dark .tasks-state{
+	.dark .dark .tasks-state {
 		background-color: var(--forms-background);
 	}
 
 	.dark .tasks-info,
 	.dark .tasks-filter {
-		background-color: transparent
+		background-color: transparent;
 	}
 
 	.dark .tasks-filter {
