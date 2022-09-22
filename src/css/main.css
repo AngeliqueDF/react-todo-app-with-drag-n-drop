@@ -467,6 +467,14 @@ button {
 	text-decoration: line-through;
 }
 
+.list-instructions {
+	color: var(--filter-buttons-base);
+	font-size: 0.7rem;
+	padding-block-end: 3rem;
+	width: fit-content;
+	margin: 2rem auto;
+}
+
 /*
 ASSETS
 */
@@ -642,6 +650,12 @@ input[type="radio"],
 
 	header {
 		background-image: var(--light-desktop-header-background);
+	}
+
+	.list-instructions {
+		font-size: 0.9rem;
+		padding-block-end: 3rem;
+		margin-block-start: 3rem;
 	}
 }
 
