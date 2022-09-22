@@ -428,6 +428,7 @@ header h1 {
 	letter-spacing: 11px;
 }
 
+form {
 	font-size: var(--forms-font-size);
 }
 
